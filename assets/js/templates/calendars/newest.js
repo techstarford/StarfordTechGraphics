@@ -487,6 +487,16 @@ const viewChannelBtn = document.getElementById('viewChannelBtn');
 const modal = document.getElementById('calendarModal');
 let currentCalendarId = null;
 
+// ===== HELPER: Slugify =====
+function slugify(text) {
+    return text
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, '') // remove special chars
+        .replace(/\s+/g, '-')       // spaces to hyphens
+        .replace(/--+/g, '-')        // collapse multiple hyphens
+        .replace(/^-+|-+$/g, '');    // trim hyphens
+}
+
 // ===== RENDER PROJECTS GRID =====
 function renderProjectsGrid(filterCategory = 'all', filterOrientation = 'all', sortBy = 'newest') {
     const grid = document.getElementById('projectsGrid');
@@ -670,11 +680,26 @@ function applyFilters() {
     renderProjectsGrid(category, orientation, sort);
 }
 
-// ===== DOWNLOAD SIMULATION =====
+// ===== DOWNLOAD TEMPLATE (REAL IMPLEMENTATION) =====
 function downloadTemplate(calId) {
     const cal = calendars[calId];
     if (!cal) return;
-    alert(`Downloading "${cal.title}" template.\n(ZIP file would be downloaded from /assets/downloads/calendars/calendar-${calId}.zip)`);
+
+    // Generate filename from title (slugify + .zip)
+    const slug = slugify(cal.title);
+    const fileName = `${slug}.zip`;
+    // Relative path from this page (templates/calendars/index.html) to downloads folder
+    const fileUrl = `../../assets/downloads/calendars/${fileName}`;
+
+    // Create temporary anchor and trigger download
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = fileName; // suggest filename for download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Increment download count and update UI
     cal.downloadCount += 1;
     localStorage.setItem(`download_${calId}`, Date.now());
     document.querySelectorAll(`.download-count[data-id="${calId}"]`).forEach(el => {
