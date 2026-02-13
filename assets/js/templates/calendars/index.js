@@ -407,7 +407,7 @@ const calendars = {
         materialsSpecs: "Print at home or college, 80gsm paper.",
         designInspiration: "Student bullet journals, academic planners.",
         practicalApplications: "High school, college, university students.",
-        thumbnailUrl: "../../assets/images/calendars/student-planner-thumb.jpg",
+        thumbnailUrl: "../../../../assets/images/calendars/student-planner-thumb.jpg",
         fullImageUrl: "../../assets/images/calendars/student-planner-full.jpg",
         calendarType: "Academic Planner",
         category: "academic",
