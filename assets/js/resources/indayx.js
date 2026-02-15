@@ -112,7 +112,23 @@ class StarfieldAnimation {
     }
 }
 
-// ===== RESOURCE DATA (12 complete items per category) =====
+// ===== SEARCH DATA (for header search) =====
+const searchData = [
+    { title: "Flyer Design Tutorial", category: "Tutorials", url: "./resources/tutorials/flyer-design.html", tags: ["tutorial", "flyer", "photoshop"] },
+    { title: "50 Free Sans-Serif Fonts", category: "Fonts", url: "./resources/fonts/sans-serif-pack.html", tags: ["fonts", "sans-serif", "free"] },
+    { title: "Pastel Color Palette", category: "Color Palettes", url: "./resources/color-palettes/pastel.html", tags: ["color", "palette", "pastel"] },
+    { title: "Branding E-book", category: "E-books", url: "./resources/ebooks/branding-guide.html", tags: ["ebook", "branding", "guide"] },
+    { title: "10 Logo Design Tips", category: "Blog", url: "./resources/blog/logo-tips.html", tags: ["blog", "logo", "tips"] },
+    { title: "Mockup Tutorial", category: "Tutorials", url: "./resources/tutorials/mockup-ai.html", tags: ["tutorial", "mockup", "illustrator"] },
+    { title: "Elegant Script Fonts", category: "Fonts", url: "./resources/fonts/script-pack.html", tags: ["fonts", "script", "elegant"] },
+    { title: "Vintage Color Scheme", category: "Color Palettes", url: "./resources/color-palettes/vintage.html", tags: ["color", "vintage", "retro"] },
+    { title: "Social Media E-book", category: "E-books", url: "./resources/ebooks/social-media-marketing.html", tags: ["ebook", "social media", "marketing"] },
+    { title: "How to Choose Fonts", category: "Blog", url: "./resources/blog/choose-fonts.html", tags: ["blog", "fonts", "typography"] },
+    { title: "Business Card Tutorial", category: "Tutorials", url: "./resources/tutorials/business-card-canva.html", tags: ["tutorial", "business card", "canva"] },
+    { title: "Neon Color Palette", category: "Color Palettes", url: "./resources/color-palettes/neon.html", tags: ["color", "neon", "bright"] }
+];
+
+// ===== RESOURCE DATA (12 complete items) =====
 const resources = {
     1: {
         id: 1,
@@ -123,7 +139,7 @@ const resources = {
         materialsSpecs: "MP4 video, PSD project files, PDF notes.",
         designInspiration: "Modern corporate design, Swiss style.",
         practicalApplications: "Perfect for designers wanting to improve their flyer skills.",
-        thumbnailUrl: "https://picsum.photos/id/0/400/300",
+        thumbnailUrl: "https://picsum.photos/id/0/600/400",
         fullImageUrl: "https://picsum.photos/id/0/1200/800",
         resourceType: "Tutorial",
         category: "tutorial",
@@ -149,7 +165,7 @@ const resources = {
         materialsSpecs: "ZIP file containing OTF, TTF, WOFF, WOFF2.",
         designInspiration: "Modern minimalism, geometric design.",
         practicalApplications: "Logos, headlines, body text, websites.",
-        thumbnailUrl: "https://picsum.photos/id/1/400/300",
+        thumbnailUrl: "https://picsum.photos/id/1/600/400",
         fullImageUrl: "https://picsum.photos/id/1/1200/800",
         resourceType: "Font Pack",
         category: "font",
@@ -175,7 +191,7 @@ const resources = {
         materialsSpecs: "PDF swatch book, ASE file for Adobe, PNG previews.",
         designInspiration: "Spring, soft, calming aesthetics.",
         practicalApplications: "Wedding invitations, baby products, lifestyle brands.",
-        thumbnailUrl: "https://picsum.photos/id/2/400/300",
+        thumbnailUrl: "https://picsum.photos/id/2/600/400",
         fullImageUrl: "https://picsum.photos/id/2/1200/800",
         resourceType: "Color Palette",
         category: "color",
@@ -201,7 +217,7 @@ const resources = {
         materialsSpecs: "PDF (printable), EPUB for e-readers.",
         designInspiration: "Industry best practices, real-world case studies.",
         practicalApplications: "Entrepreneurs, designers, marketers.",
-        thumbnailUrl: "https://picsum.photos/id/3/400/300",
+        thumbnailUrl: "https://picsum.photos/id/3/600/400",
         fullImageUrl: "https://picsum.photos/id/3/1200/800",
         resourceType: "E-book",
         category: "ebook",
@@ -227,7 +243,7 @@ const resources = {
         materialsSpecs: "Web article (online).",
         designInspiration: "Expert logo designers.",
         practicalApplications: "Freelancers, agencies, students.",
-        thumbnailUrl: "https://picsum.photos/id/4/400/300",
+        thumbnailUrl: "https://picsum.photos/id/4/600/400",
         fullImageUrl: "https://picsum.photos/id/4/1200/800",
         resourceType: "Blog Post",
         category: "blog",
@@ -253,7 +269,7 @@ const resources = {
         materialsSpecs: "MP4, AI files.",
         designInspiration: "Product photography, branding presentations.",
         practicalApplications: "Designers wanting to present their work professionally.",
-        thumbnailUrl: "https://picsum.photos/id/5/400/300",
+        thumbnailUrl: "https://picsum.photos/id/5/600/400",
         fullImageUrl: "https://picsum.photos/id/5/1200/800",
         resourceType: "Tutorial",
         category: "tutorial",
@@ -279,7 +295,7 @@ const resources = {
         materialsSpecs: "ZIP with OTF, TTF.",
         designInspiration: "Vintage calligraphy, modern brush lettering.",
         practicalApplications: "Wedding stationery, branding, social media.",
-        thumbnailUrl: "https://picsum.photos/id/6/400/300",
+        thumbnailUrl: "https://picsum.photos/id/6/600/400",
         fullImageUrl: "https://picsum.photos/id/6/1200/800",
         resourceType: "Font Pack",
         category: "font",
@@ -305,7 +321,7 @@ const resources = {
         materialsSpecs: "ASE, PDF, PNG previews.",
         designInspiration: "Retro advertising, old photographs.",
         practicalApplications: "Vintage brands, posters, apparel.",
-        thumbnailUrl: "https://picsum.photos/id/7/400/300",
+        thumbnailUrl: "https://picsum.photos/id/7/600/400",
         fullImageUrl: "https://picsum.photos/id/7/1200/800",
         resourceType: "Color Palette",
         category: "color",
@@ -331,7 +347,7 @@ const resources = {
         materialsSpecs: "PDF, EPUB.",
         designInspiration: "Top social media experts.",
         practicalApplications: "Freelancers, agencies, entrepreneurs.",
-        thumbnailUrl: "https://picsum.photos/id/8/400/300",
+        thumbnailUrl: "https://picsum.photos/id/8/600/400",
         fullImageUrl: "https://picsum.photos/id/8/1200/800",
         resourceType: "E-book",
         category: "ebook",
@@ -357,7 +373,7 @@ const resources = {
         materialsSpecs: "Web article.",
         designInspiration: "Typography experts.",
         practicalApplications: "Designers of all levels.",
-        thumbnailUrl: "https://picsum.photos/id/9/400/300",
+        thumbnailUrl: "https://picsum.photos/id/9/600/400",
         fullImageUrl: "https://picsum.photos/id/9/1200/800",
         resourceType: "Blog Post",
         category: "blog",
@@ -383,7 +399,7 @@ const resources = {
         materialsSpecs: "MP4, Canva template link.",
         designInspiration: "Modern business card trends.",
         practicalApplications: "Small business owners, freelancers.",
-        thumbnailUrl: "https://picsum.photos/id/10/400/300",
+        thumbnailUrl: "https://picsum.photos/id/10/600/400",
         fullImageUrl: "https://picsum.photos/id/10/1200/800",
         resourceType: "Tutorial",
         category: "tutorial",
@@ -409,7 +425,7 @@ const resources = {
         materialsSpecs: "ASE, PDF, PNG previews.",
         designInspiration: "80s synthwave, cyberpunk.",
         practicalApplications: "Club flyers, gaming, streetwear.",
-        thumbnailUrl: "https://picsum.photos/id/11/400/300",
+        thumbnailUrl: "https://picsum.photos/id/11/600/400",
         fullImageUrl: "https://picsum.photos/id/11/1200/800",
         resourceType: "Color Palette",
         category: "color",
@@ -427,9 +443,6 @@ const resources = {
         videoUrl: null
     }
 };
-
-// Additional items to reach 12 per category (for demo, we reuse some with different IDs)
-// For brevity, we'll assume the existing 12 cover at least 2 per category. To truly have 12 per category, you'd expand. But for this demo, we'll just use the above.
 
 // ===== GLOBAL VARIABLES =====
 let likedResources = JSON.parse(localStorage.getItem('likedResources')) || [];
@@ -473,22 +486,31 @@ function slugify(text) {
         .replace(/^-+|-+$/g, '');
 }
 
-// ===== RENDER SECTION (filter by category, limit to 12) =====
-function renderSection(gridId, category, limit = 12) {
-    const grid = document.getElementById(gridId);
+// ===== RENDER PROJECTS GRID =====
+function renderProjectsGrid(filterCategory = 'all', sortBy = 'newest') {
+    const grid = document.getElementById('projectsGrid');
     if (!grid) return;
 
-    const filtered = Object.values(resources)
-        .filter(r => r.category === category)
-        .slice(0, limit);
+    let filtered = Object.values(resources).filter(r => {
+        if (filterCategory !== 'all' && !r.categories.includes(filterCategory)) return false;
+        return true;
+    });
+
+    // Sorting
+    if (sortBy === 'popular') filtered.sort((a,b) => b.likes - a.likes);
+    else if (sortBy === 'downloads') filtered.sort((a,b) => b.downloadCount - a.downloadCount);
+    else if (sortBy === 'az') filtered.sort((a,b) => a.title.localeCompare(b.title));
+    else if (sortBy === 'za') filtered.sort((a,b) => b.title.localeCompare(a.title));
+    else filtered.sort((a,b) => b.id - a.id); // newest
 
     grid.innerHTML = filtered.map(r => {
         const isLiked = likedResources.includes(r.id);
         const likeCount = isLiked ? r.likes + 1 : r.likes;
+        const badgeText = r.categories[0].charAt(0).toUpperCase() + r.categories[0].slice(1);
 
         return `
-        <div class="project-card" data-id="${r.id}" data-category="${r.category}">
-            <div class="project-badge">${r.resourceType}</div>
+        <div class="project-card" data-id="${r.id}" data-category="${r.categories.join(' ')}">
+            <div class="project-badge">${badgeText}</div>
             <div class="project-img">
                 <img src="${r.thumbnailUrl}" alt="${r.title}" loading="lazy">
             </div>
@@ -513,8 +535,8 @@ function renderSection(gridId, category, limit = 12) {
         `;
     }).join('');
 
-    // Attach like event listeners within this grid
-    grid.querySelectorAll('.project-likes .like-icon').forEach(icon => {
+    // Attach like event listeners
+    document.querySelectorAll('.project-likes .like-icon').forEach(icon => {
         icon.addEventListener('click', function(e) {
             e.stopPropagation();
             const id = parseInt(this.dataset.id);
@@ -523,7 +545,7 @@ function renderSection(gridId, category, limit = 12) {
     });
 
     // Attach card click to open modal
-    grid.querySelectorAll('.project-card').forEach(card => {
+    document.querySelectorAll('.project-card').forEach(card => {
         card.addEventListener('click', function(e) {
             if (!e.target.classList.contains('like-icon') && !e.target.closest('.project-likes')) {
                 const id = parseInt(this.dataset.id);
@@ -548,7 +570,7 @@ function handleLike(rId) {
     }
     localStorage.setItem('likedResources', JSON.stringify(likedResources));
 
-    // Update all like icons and counts for this resource across all sections
+    // Update UI
     const likeIcons = document.querySelectorAll(`.project-likes .like-icon[data-id="${rId}"]`);
     const likeCounts = document.querySelectorAll(`.like-count[data-id="${rId}"]`);
 
@@ -565,143 +587,71 @@ function openModal(id) {
     document.getElementById('modalImage').src = r.thumbnailUrl;
     document.getElementById('modalTitle').textContent = r.title;
     document.getElementById('modalSubtitle').textContent = r.subtitle;
+    document.getElementById('modalDescription').textContent = r.description;
+    document.getElementById('designDetails').textContent = r.designDetails;
+    document.getElementById('materialsSpecs').textContent = r.materialsSpecs;
+    document.getElementById('designInspiration').textContent = r.designInspiration;
+    document.getElementById('practicalApplications').textContent = r.practicalApplications;
+    document.getElementById('resourceType').textContent = r.resourceType;
+    document.getElementById('fileFormat').textContent = r.fileFormats.join(', ');
+    document.getElementById('fileSize').textContent = r.fileSize;
+    document.getElementById('downloadCount').textContent = r.downloadCount.toLocaleString();
+    document.getElementById('author').textContent = r.author;
+    document.getElementById('publishedDate').textContent = r.publishedDate;
+    document.getElementById('modalFullImage').src = r.fullImageUrl;
+    document.getElementById('modalFullImage').className = `modal-full-image`;
+
     document.getElementById('modalPrice').innerHTML = '<span class="price-free">FREE</span>';
 
-    // Build dynamic content based on category
-    const contentArea = document.getElementById('modalContentArea');
-    contentArea.innerHTML = ''; // clear
+    const formatBadges = document.getElementById('formatBadges');
+    formatBadges.innerHTML = r.fileFormats.map(f => `<span class="format-badge">${f}</span>`).join('');
 
-    // Description section (common)
-    contentArea.innerHTML += `
-        <div class="modal-content-section">
-            <h3>Description</h3>
-            <p>${r.description}</p>
-        </div>
-    `;
+    // Show color palette section if resource has colors
+    const colorPaletteSection = document.getElementById('colorPaletteSection');
+    if (r.colors && r.colors.length > 0) {
+        colorPaletteSection.style.display = 'block';
+        const colorPalette = document.getElementById('colorPalette');
+        colorPalette.innerHTML = r.colors.map((c, i) => `
+            <div class="color" style="background-color: ${c};" title="${r.colorNames[i]}"></div>
+        `).join('');
+    } else {
+        colorPaletteSection.style.display = 'none';
+    }
 
-    // Details grid (common)
-    contentArea.innerHTML += `
-        <div class="modal-details-grid">
-            <div class="modal-detail-item">
-                <h4>Type</h4>
-                <p>${r.resourceType}</p>
-            </div>
-            <div class="modal-detail-item">
-                <h4>Formats</h4>
-                <p>${r.fileFormats.join(', ')}</p>
-            </div>
-            <div class="modal-detail-item">
-                <h4>File Size</h4>
-                <p>${r.fileSize}</p>
-            </div>
-            <div class="modal-detail-item">
-                <h4>Downloads</h4>
-                <p>${r.downloadCount.toLocaleString()}</p>
-            </div>
-            <div class="modal-detail-item">
-                <h4>Author</h4>
-                <p>${r.author}</p>
-            </div>
-            <div class="modal-detail-item">
-                <h4>Published</h4>
-                <p>${r.publishedDate}</p>
-            </div>
-        </div>
-    `;
+    document.getElementById('tagsContainer').innerHTML = r.tags.map(t => `<span class="tag">${t}</span>`).join('');
 
-    // Category-specific sections
-    if (r.category === 'tutorial' && r.videoUrl) {
+    const featuresList = document.getElementById('featuresList');
+    featuresList.innerHTML = r.features.map(f => `<li>${f}</li>`).join('');
+
+    // Hide customize button for resources (not applicable)
+    document.getElementById('customizeBtn').style.display = 'none';
+
+    // Handle video tutorial section
+    const videoSection = document.getElementById('videoTutorialSection');
+    if (r.videoUrl) {
+        videoSection.style.display = 'block';
         const videoId = extractYouTubeID(r.videoUrl);
-        const thumbnailUrl = videoId ? `https://img.youtube.com/vi/${videoId}/0.jpg` : '';
-        contentArea.innerHTML += `
-            <div class="video-tutorial-section">
-                <h3><i class="fab fa-youtube"></i> Video Tutorial</h3>
-                <div class="video-container">
-                    <a href="${r.videoUrl}" target="_blank" class="video-thumbnail">
-                        <img src="${thumbnailUrl}" alt="Video Thumbnail">
-                        <div class="play-button"><i class="fas fa-play-circle"></i></div>
-                    </a>
-                    <p>Watch this tutorial to learn more.</p>
-                </div>
-            </div>
-        `;
+        if (videoId) {
+            const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/0.jpg`;
+            document.getElementById('videoThumbnail').src = thumbnailUrl;
+            document.getElementById('videoLink').href = r.videoUrl;
+        } else {
+            // fallback: just show the link as text
+            document.getElementById('videoThumbnail').src = '';
+            document.getElementById('videoLink').href = r.videoUrl;
+            document.querySelector('.video-container p').innerHTML = `<a href="${r.videoUrl}" target="_blank">Watch tutorial on YouTube</a>`;
+        }
+    } else {
+        videoSection.style.display = 'none';
     }
 
-    if (r.category === 'font') {
-        // Show a font sample
-        contentArea.innerHTML += `
-            <div class="modal-content-section">
-                <h3>Font Preview</h3>
-                <div class="modal-font-sample" style="font-family: 'Arial', sans-serif;">
-                    The quick brown fox jumps over the lazy dog.
-                </div>
-            </div>
-        `;
-    }
+    generateRelatedDesigns(id, r.category);
 
-    if (r.category === 'color' && r.colors && r.colors.length > 0) {
-        let swatches = '';
-        r.colors.forEach((c, i) => {
-            swatches += `<div class="modal-color-swatch" style="background-color: ${c};" title="${r.colorNames[i]}">${c}</div>`;
-        });
-        contentArea.innerHTML += `
-            <div class="modal-content-section">
-                <h3>Color Palette</h3>
-                <div class="modal-color-swatches">
-                    ${swatches}
-                </div>
-            </div>
-        `;
-    }
-
-    if (r.category === 'ebook') {
-        contentArea.innerHTML += `
-            <div class="modal-content-section">
-                <h3>About this E‑book</h3>
-                <p>${r.designDetails}</p>
-                <p><strong>Specifications:</strong> ${r.materialsSpecs}</p>
-            </div>
-        `;
-    }
-
-    if (r.category === 'blog') {
-        contentArea.innerHTML += `
-            <div class="modal-content-section">
-                <h3>Read Time</h3>
-                <p>${r.designDetails}</p>
-                <p><a href="#" target="_blank" class="btn btn-outline" style="margin-top:10px;">Read Full Article</a></p>
-            </div>
-        `;
-    }
-
-    // Tags
-    contentArea.innerHTML += `
-        <div class="tags-section">
-            <h3>Tags</h3>
-            <div class="tags">
-                ${r.tags.map(t => `<span class="tag">${t}</span>`).join('')}
-            </div>
-        </div>
-    `;
-
-    // Features
-    contentArea.innerHTML += `
-        <div class="features-section">
-            <h3>Key Features</h3>
-            <ul>
-                ${r.features.map(f => `<li>${f}</li>`).join('')}
-            </ul>
-        </div>
-    `;
-
-    // Update like button state
     const modalLikeBtn = document.getElementById('modalLikeBtn');
     const modalLikeCount = document.getElementById('modalLikeCount');
     const isLiked = likedResources.includes(id);
     modalLikeBtn.classList.toggle('active', isLiked);
     modalLikeCount.textContent = isLiked ? r.likes + 1 : r.likes;
-
-    generateRelatedDesigns(id, r.category);
 
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -738,6 +688,14 @@ function generateRelatedDesigns(currentId, category) {
     });
 }
 
+// ===== FILTER & SORT =====
+function applyFilters() {
+    const activeFilterBtn = document.querySelector('.filter-btn.active');
+    const category = activeFilterBtn ? activeFilterBtn.dataset.filter : 'all';
+    const sort = document.getElementById('sortFilter').value;
+    renderProjectsGrid(category, sort);
+}
+
 // ===== DOWNLOAD RESOURCE =====
 function downloadResource(rId) {
     const r = resources[rId];
@@ -767,10 +725,7 @@ function downloadResource(rId) {
     document.querySelectorAll(`.download-count[data-id="${rId}"]`).forEach(el => {
         el.textContent = r.downloadCount;
     });
-    // Also update modal if open
-    if (currentResourceId === rId) {
-        document.getElementById('downloadCount').textContent = r.downloadCount.toLocaleString();
-    }
+    document.getElementById('downloadCount').textContent = r.downloadCount.toLocaleString();
 }
 
 // ===== SEARCH FUNCTIONALITY =====
@@ -876,12 +831,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Render each section (limit to 12 items per section)
-    renderSection('tutorials-grid', 'tutorial', 12);
-    renderSection('fonts-grid', 'font', 12);
-    renderSection('color-grid', 'color', 12);
-    renderSection('ebooks-grid', 'ebook', 12);
-    renderSection('blog-grid', 'blog', 12);
+    // Initial render of resources grid
+    renderProjectsGrid();
+    
+    // ===== FILTER BUTTONS =====
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            applyFilters();
+        });
+    });
+
+    // Filter selects
+    ['categoryFilter', 'sortFilter'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('change', applyFilters);
+    });
+
+    // Load More (simulate)
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
+            this.disabled = true;
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-plus"></i> Load More Resources';
+                this.disabled = false;
+                alert('More resources would be loaded dynamically in production.');
+            }, 1000);
+        });
+    }
 
     // ===== MODAL CLOSE EVENTS =====
     document.getElementById('closeModal')?.addEventListener('click', closeModal);

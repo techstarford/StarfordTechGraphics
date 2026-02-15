@@ -23,12 +23,12 @@
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Slick Slider (optional) -->
+    <!-- Slick Slider -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
     <!-- Custom CSS for this page -->
-    <link rel="stylesheet" href="../assets/css/resources/new.css">
+    <link rel="stylesheet" href="../assets/css/resources/inday.css">
 </head>
 <body>
     <!-- ===== HEADER (exactly as before) ===== -->
@@ -244,7 +244,7 @@
                 <h1>Level Up Your <span class="gradient-text">Design Skills</span></h1>
                 <p class="hero-subtitle">Access tutorials, free fonts, color palettes, e-books and blog posts – all completely free. Learn, create, and get inspired.</p>
                 <div class="hero-btns">
-                    <a href="#tutorials-section" class="btn btn-glow" id="exploreBtn">
+                    <a href="#templates-grid" class="btn btn-glow" id="exploreBtn">
                         <i class="fas fa-search"></i> Browse Resources
                     </a>
                     <a href="#featured-templates" class="btn btn-outline-light">
@@ -260,54 +260,51 @@
         </div>
     </section>
 
-    <!-- ===== RESOURCES SECTIONS ===== -->
-    <div class="container resources-container">
-
-        <!-- Tutorials Section -->
-        <section id="tutorials-section" class="resource-section" data-aos="fade-up">
-            <div class="section-header">
-                <h2><i class="fas fa-video"></i> Tutorials</h2>
-                <a href="tutorials.html" class="view-all-btn">View All Tutorials <i class="fas fa-arrow-right"></i></a>
+    <!-- ===== MAIN CONTENT (resources grid + modal) ===== -->
+    <div class="container" id="templates-grid">
+        <!-- Search & Filter Section -->
+        <div class="search-filter-section" data-aos="fade-up">
+            <div class="advanced-filters">
+                <div class="filter-group">
+                    <span class="filter-label"><i class="fas fa-filter"></i> Filter by:</span>
+                    <select class="filter-select" id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="tutorial">Tutorials</option>
+                        <option value="font">Fonts</option>
+                        <option value="color">Color Palettes</option>
+                        <option value="ebook">E‑books</option>
+                        <option value="blog">Blog Posts</option>
+                    </select>
+                    <select class="filter-select" id="sortFilter">
+                        <option value="newest">Newest First</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="downloads">Most Downloads</option>
+                        <option value="az">A to Z</option>
+                        <option value="za">Z to A</option>
+                    </select>
+                </div>
             </div>
-            <div class="projects-grid" id="tutorials-grid"></div>
-        </section>
+        </div>
 
-        <!-- Fonts Section -->
-        <section id="fonts-section" class="resource-section" data-aos="fade-up">
-            <div class="section-header">
-                <h2><i class="fas fa-font"></i> Fonts</h2>
-                <a href="fonts.html" class="view-all-btn">View All Fonts <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="projects-grid" id="fonts-grid"></div>
-        </section>
+        <!-- Quick Filter Buttons (by category) -->
+        <div class="filter-controls" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">All Resources</button>
+            <button class="filter-btn" data-filter="tutorial">Tutorials</button>
+            <button class="filter-btn" data-filter="font">Fonts</button>
+            <button class="filter-btn" data-filter="color">Color Palettes</button>
+            <button class="filter-btn" data-filter="ebook">E‑books</button>
+            <button class="filter-btn" data-filter="blog">Blog Posts</button>
+        </div>
 
-        <!-- Color Palettes Section -->
-        <section id="color-section" class="resource-section" data-aos="fade-up">
-            <div class="section-header">
-                <h2><i class="fas fa-palette"></i> Color Palettes</h2>
-                <a href="color-palettes.html" class="view-all-btn">View All Palettes <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="projects-grid" id="color-grid"></div>
-        </section>
+        <!-- Projects Grid – dynamically populated via JS -->
+        <div class="projects-grid" id="projectsGrid"></div>
 
-        <!-- E-books Section -->
-        <section id="ebooks-section" class="resource-section" data-aos="fade-up">
-            <div class="section-header">
-                <h2><i class="fas fa-book"></i> E‑books</h2>
-                <a href="ebooks.html" class="view-all-btn">View All E‑books <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="projects-grid" id="ebooks-grid"></div>
-        </section>
-
-        <!-- Blog Posts Section -->
-        <section id="blog-section" class="resource-section" data-aos="fade-up">
-            <div class="section-header">
-                <h2><i class="fas fa-blog"></i> Blog Posts</h2>
-                <a href="blog.html" class="view-all-btn">View All Posts <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="projects-grid" id="blog-grid"></div>
-        </section>
-
+        <!-- Load More Button -->
+        <div class="load-more-container" data-aos="fade-up">
+            <button class="btn load-more-btn" id="loadMoreBtn">
+                <i class="fas fa-plus"></i> Load More Resources
+            </button>
+        </div>
     </div>
 
     <!-- ===== MODAL POPUP (full details) ===== -->
@@ -351,17 +348,114 @@
                     </div>
                 </div>
 
-                <!-- Dynamic content sections based on resource type -->
-                <div id="modalContentArea"></div>
+                <!-- Detailed description sections -->
+                <div class="modal-description-container">
+                    <h3>Description</h3>
+                    <p class="modal-description" id="modalDescription"></p>
+                </div>
+                
+                <div class="design-details-section">
+                    <h3>Details</h3>
+                    <p id="designDetails"></p>
+                </div>
+                
+                <div class="materials-section">
+                    <h3>Specifications</h3>
+                    <p id="materialsSpecs"></p>
+                </div>
+                
+                <div class="inspiration-section">
+                    <h3>Design Inspiration</h3>
+                    <p id="designInspiration"></p>
+                </div>
+                
+                <div class="applications-section">
+                    <h3>Practical Applications</h3>
+                    <p id="practicalApplications"></p>
+                </div>
+                
+                <!-- Full image preview (if applicable) -->
+                <div class="modal-full-image-container">
+                    <div class="modal-full-image-wrapper">
+                        <img id="modalFullImage" src="" alt="" class="modal-full-image">
+                    </div>
+                </div>
 
+                <!-- Design details grid -->
+                <div class="design-details">
+                    <div class="detail-item">
+                        <h4>Resource Type</h4>
+                        <p id="resourceType"></p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>File Formats</h4>
+                        <p id="fileFormat"></p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>File Size</h4>
+                        <p id="fileSize"></p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Downloads</h4>
+                        <p id="downloadCount"></p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Author</h4>
+                        <p id="author"></p>
+                    </div>
+                    <div class="detail-item">
+                        <h4>Published</h4>
+                        <p id="publishedDate"></p>
+                    </div>
+                </div>
+                
+                <!-- File format badges -->
+                <div class="file-formats">
+                    <h3>Available Formats</h3>
+                    <div class="format-badges" id="formatBadges"></div>
+                </div>
+                
+                <!-- Color palette (for color resources) -->
+                <div class="color-palette" id="colorPaletteSection" style="display: none;">
+                    <h3>Color Palette</h3>
+                    <div class="colors" id="colorPalette"></div>
+                </div>
+                
+                <!-- Tags -->
+                <div class="tags-section">
+                    <h3>Tags</h3>
+                    <div class="tags" id="tagsContainer"></div>
+                </div>
+                
+                <!-- Key features -->
+                <div class="features-section">
+                    <h3>Key Features</h3>
+                    <ul id="featuresList"></ul>
+                </div>
+                
                 <!-- Action buttons (download / read more) -->
                 <div class="modal-actions">
                     <button class="btn btn-primary" id="previewBtn">
                         <i class="fas fa-eye"></i> Preview
                     </button>
+                    <button class="btn btn-secondary" id="customizeBtn" style="display: none;"> <!-- hidden if not applicable -->
+                        <i class="fas fa-edit"></i> Customize
+                    </button>
                     <button class="btn btn-success" id="downloadResourceBtn">
                         <i class="fas fa-download"></i> Download / Read
                     </button>
+                </div>
+
+                <!-- Video Tutorial Section (if resource has video) -->
+                <div class="video-tutorial-section" id="videoTutorialSection" style="display: none;">
+                    <h3><i class="fab fa-youtube"></i> Video Tutorial</h3>
+                    <div class="video-container">
+                        <a href="#" id="videoLink" target="_blank" class="video-thumbnail">
+                            <img id="videoThumbnail" src="" alt="Video Tutorial Thumbnail">
+                            <div class="play-button"><i class="fas fa-play-circle"></i></div>
+                        </a>
+                        <p id="videoCaption">Watch this tutorial to learn more.</p>
+                    </div>
                 </div>
                 
                 <!-- Related resources -->
@@ -423,11 +517,11 @@
                 <div class="footer-col">
                     <h3>Resource Categories</h3>
                     <ul>
-                        <li><a href="#tutorials-section">Tutorials</a></li>
-                        <li><a href="#fonts-section">Free Fonts</a></li>
-                        <li><a href="#color-section">Color Palettes</a></li>
-                        <li><a href="#ebooks-section">E‑books</a></li>
-                        <li><a href="#blog-section">Design Blog</a></li>
+                        <li><a href="#tutorials">Tutorials</a></li>
+                        <li><a href="#fonts">Free Fonts</a></li>
+                        <li><a href="#color-palettes">Color Palettes</a></li>
+                        <li><a href="#ebooks">E‑books</a></li>
+                        <li><a href="#blog">Design Blog</a></li>
                     </ul>
                 </div>
                 
@@ -505,6 +599,6 @@
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     
     <!-- Custom JS for this page -->
-    <script src="../assets/js/resources/newest.js"></script>
+    <script src="../assets/js/resources/indayx.js"></script>
 </body>
 </html>
