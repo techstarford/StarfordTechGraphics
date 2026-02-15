@@ -27,7 +27,8 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
-    <link rel="stylesheet" href="./assets/css/index.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../learn/file1.css">
 </head>
 <body>
     <!-- Header -->
@@ -77,19 +78,6 @@
                             <li><a href="./templates/social-media/index.html">Social Media</a></li>
                         </ul>
                     </li>
-                    
-                    <!-- Online Editor Dropdown (Commented for future implementation) -->
-                    <!--
-                    <li class="dropdown">
-                        <a href="#">Online Editor <i class="fas fa-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#"><i class="fas fa-edit"></i> Quick Edit</a></li>
-                            <li><a href="#"><i class="fas fa-magic"></i> AI Design Tool</a></li>
-                            <li><a href="#"><i class="fas fa-image"></i> Image Editor</a></li>
-                            <li><a href="#"><i class="fas fa-text-height"></i> Text Editor</a></li>
-                        </ul>
-                    </li>
-                    -->
                     
                     <li class="dropdown">
                         <a href="./resources/index.html">Resources <i class="fas fa-chevron-down"></i></a>
@@ -160,21 +148,6 @@
                     <li><a href="./templates/social-media/index.html">Social Media</a></li>
                 </ul>
             </li>
-           
-            <!-- Mobile Online Editor (Commented) -->
-            <!--
-            <li>
-                <div class="mobile-dropdown-toggle">
-                    <a href="#">Online Editor <i class="fas fa-chevron-down"></i></a>
-                </div>
-                <ul class="mobile-dropdown">
-                    <li><a href="#">Quick Edit</a></li>
-                    <li><a href="#">AI Design Tool</a></li>
-                    <li><a href="#">Image Editor</a></li>
-                    <li><a href="#">Text Editor</a></li>
-                </ul>
-            </li>
-            -->
            
             <li>
                 <div class="mobile-dropdown-toggle">
@@ -268,7 +241,7 @@
     <!-- ===== Starry Hero Section ===== -->
     <section class="hero starry-hero">
         <div class="container hero-container">
-            <div class="hero-content" data-aos="">
+            <div class="hero-content" data-aos="fade-up">
                 <!-- Subtle Badge -->
                 <div class="hero-badge">
                     <span><i class="fas fa-gem"></i> Free Professional Designs</span>
@@ -278,18 +251,18 @@
                 <h1>Free <span class="gradient-text">Graphic Design</span> Templates</h1>
                 <p class="hero-subtitle">Download 40,000+ high-quality logos, mockups, print templates & creative assets. 100% free for commercial use.</p>
                 
-                <!-- Call-to-Action Buttons (FIXED) -->
+                <!-- Call-to-Action Buttons -->
                 <div class="hero-btns">
                     <a href="../../templates/index.html" class="btn btn-glow">
                         <i class="fas fa-download"></i> Browse All Templates
                     </a>
-                    <a href="../../index.html#featured-templates" class="btn btn-outline-light">
+                    <a href="#popular-designs" class="btn btn-outline-light">
                         <i class="fas fa-fire"></i> See Popular Designs
                     </a>
                 </div>
                 
                 <!-- Stats Bar -->
-                <div class="hero-stats" data-aos="" data-aos-delay="300">
+                <div class="hero-stats" data-aos="fade-up" data-aos-delay="300">
                     <div class="stat-item">
                         <div class="stat-number">40,000+</div>
                         <div class="stat-label">Free Templates</div>
@@ -316,200 +289,86 @@
         </div>
     </section>
 
-<!-- ===== Featured Templates Section ===== -->
+    <!-- ===== Featured Templates Section ===== -->
     <section class="featured-templates">
         <div class="container">
-            <div class="section-title" data-aos="">
+            <div class="section-title" data-aos="fade-up">
                 <h2>Featured Template Packs</h2>
                 <p>Check out our most popular and recently added free templates</p>
             </div>
             
-            <div class="featured-slider" data-aos="">
-                <a href="" class="featured-slide">
-                    <div class="featured-card">
-                        <div class="featured-img">
-                            <img src="./assets/images/ultimate-business-bundle.jpg" alt="Featured Template 1">
-                            <div class="featured-badge">Bestseller</div>
-                        </div>
-                        <div class="featured-content">
-                            <h3>Ultimate Business Bundle</h3>
-                            <p>Complete set of business templates including logos, cards, letterheads, and presentations.</p>
-                            <div class="featured-meta">
-                                <span class="featured-price">Free</span>
-                                <span class="featured-rating">
-                                    <i class="fas fa-star"></i> 5.0 (128)
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="./templates/social-media/index.html" class="featured-slide">
-                    <div class="featured-card">
-                        <div class="featured-img">
-                            <img src="./assets/images/youtube-banner-design.jpg" alt="Featured Template 2">
-                            <div class="featured-badge">New</div>
-                        </div>
-                        <div class="featured-content">
-                            <h3>Social Media Pack 2025</h3>
-                            <p>200+ templates for Instagram posts, stories, Facebook covers, and Twitter headers.</p>
-                            <div class="featured-meta">
-                                <span class="featured-price">Free</span>
-                                <span class="featured-rating">
-                                    <i class="fas fa-star"></i> 4.9 (87)
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="./templates/flyers/birthday-flyer-templates.html" class="featured-slide">
-                    <div class="featured-card">
-                        <div class="featured-img">
-                            <img src="./assets/images/flyers/birthday-flyer.jpg" alt="Featured Template 3">
-                        </div>
-                        <div class="featured-content">
-                            <h3>Birthday Flyer Templates Pack</h3>
-                            <p>Clean and modern birthday flyer template design.</p>
-                            <div class="featured-meta">
-                                <span class="featured-price">Free</span>
-                                <span class="featured-rating">
-                                    <i class="fas fa-star"></i> 4.8 (156)
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="" class="featured-slide">
-                    <div class="featured-card">
-                        <div class="featured-img">
-                            <img src="./assets/images/flyers/giveaway-flyer-template.jpg" alt="Featured Template 4">
-                            <div class="featured-badge">Limited</div>
-                        </div>
-                        <div class="featured-content">
-                            <h3>Wedding Invitation Suite</h3>
-                            <p>Elegant wedding invitations with matching RSVP cards, programs, and menus.</p>
-                            <div class="featured-meta">
-                                <span class="featured-price">Free</span>
-                                <span class="featured-rating">
-                                    <i class="fas fa-star"></i> 4.9 (64)
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="./templates/calendars/index.html" class="featured-slide">
-                    <div class="featured-card">
-                        <div class="featured-img">
-                            <img src="./assets/images/calendars/Calendar design template 2024.jpg" alt="Featured Template 5">
-                        </div>
-                        <div class="featured-content">
-                            <h3>2026 Calendar Collection</h3>
-                            <p>Beautifully designed wall, desk, and planner calendars for 2026.</p>
-                            <div class="featured-meta">
-                                <span class="featured-price">Free</span>
-                                <span class="featured-rating">
-                                    <i class="fas fa-star"></i> 4.7 (93)
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
+            <div class="featured-slider" data-aos="fade-up">
+                <!-- Slides will be populated by JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
+    <!-- ===== Popular Designs Section (NEW - 8 cards, 4 per row) ===== -->
+    <section id="popular-designs" class="section popular-section">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2><i class="fas fa-fire" style="color: #f72585; margin-right: 10px;"></i> Popular Designs</h2>
+                <p>Our community's most loved templates — updated in real time</p>
+            </div>
+            
+            <div class="popular-grid" id="popularGrid">
+                <!-- 8 popular design cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Recent Designs Section (Portfolio) ===== -->
     <section class="section portfolio">
         <div class="container">
-            <div class="section-title" data-aos="">
+            <div class="section-title" data-aos="fade-up">
                 <h2>Recent Designs</h2>
                 <p>Latest template additions to our free collection</p>
             </div>
             
-            <div class="portfolio-grid">
+            <div class="portfolio-grid" id="portfolioGrid">
                 <!-- Portfolio items will be populated by JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- ===== POPULAR DESIGNS SECTION (New Section) ===== -->
-    <section class="popular-designs" id="popular-designs">
-        <div class="container">
-            <div class="section-title" data-aos="">
-                <h2>🔥 Popular Designs</h2>
-                <p>Most loved and downloaded templates by our community- updated in real time.</p>
-                <div class="section-badge">
-                    <i class="fas fa-fire"></i> Trending Now
-                </div>
-            </div>
-            
-            <!-- Filter Controls for Popular Section -->
-            <div class="popular-filter-controls" data-aos="">
-                <button class="filter-popular-btn active" data-filter="all">All</button>
-                <button class="filter-popular-btn" data-filter="flyers">Flyers</button>
-                <button class="filter-popular-btn" data-filter="logos">Logos</button>
-                <button class="filter-popular-btn" data-filter="calendars">Calendars</button>
-                <button class="filter-popular-btn" data-filter="posters">Posters</button>
-                <button class="filter-popular-btn" data-filter="social">Social Media</button>
-                <button class="filter-popular-btn" data-filter="business">Business Cards</button>
-            </div>
-            
-            <!-- Popular Designs Grid (8 items - 2 rows of 4) -->
-            <div class="popular-grid" id="popularGrid" data-aos="fade-up">
-                <!-- Will be populated by JavaScript -->
-            </div>
-            
-            <!-- Load More Button -->
-            <div class="load-more-container" data-aos="fade-up">
-                <button class="btn load-more-btn" id="loadMorePopularBtn">
-                    <i class="fas fa-sync-alt"></i> Load More Designs
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
+    <!-- ===== Design Categories Section (Services) ===== -->
     <section class="section">
         <div class="container">
-            <div class="section-title" data-aos="">
+            <div class="section-title" data-aos="fade-up">
                 <h2>Design Categories</h2>
                 <p>Browse templates by category. All designs are professionally crafted and ready to use</p>
             </div>
             
-            <div class="services-grid">
+            <div class="services-grid" id="servicesGrid">
                 <!-- Service cards will be populated by JavaScript -->
             </div>
         </div>
     </section>
 
-    <!-- Design Tools Section -->
+    <!-- ===== Design Tools Section ===== -->
     <section class="section">
         <div class="container">
-            <div class="section-title" data-aos="">
+            <div class="section-title" data-aos="fade-up">
                 <h2>Design Tools We Use</h2>
                 <p>Professional tools for creating high-quality templates</p>
             </div>
             
-            <div class="tools-grid">
+            <div class="tools-grid" id="toolsGrid">
                 <!-- Tools will be populated by JavaScript -->
             </div>
         </div>
     </section>
     
-
-    <!-- Testimonials -->
+    <!-- ===== Testimonials Section ===== -->
     <section class="section testimonials">
         <div class="container">
-            <div class="section-title" data-aos="">
+            <div class="section-title" data-aos="fade-up">
                 <h2>Client Testimonials</h2>
                 <p>What our clients say about working with us</p>
             </div>
             
             <div class="testimonial-grid">
-                <div class="testimonial-card" data-aos="" data-aos-delay="100">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="testimonial-text">
                         Starford Tech Graphics transformed our brand identity completely. Their attention to detail and creative approach resulted in a logo and branding that perfectly represents our values. The team was professional, responsive, and delivered beyond our expectations.
                     </div>
@@ -531,7 +390,7 @@
                     </div>
                 </div>
                 
-                <div class="testimonial-card" data-aos="" data-aos-delay="200">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="testimonial-text">
                         The packaging design created by Starford Tech helped our product stand out on crowded shelves. Their strategic approach to design increased our sales by 30% in the first quarter after launch. We continue to work with them for all our design needs.
                     </div>
@@ -541,7 +400,7 @@
                         </div>
                         <div class="author-info">
                             <h4>Tumuramye Yoweri</h4>
-                            <p>Marketing Director, Skylight Bakery </p>
+                            <p>Marketing Director, Skylight Bakery</p>
                             <div class="rating">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -553,7 +412,7 @@
                     </div>
                 </div>
                 
-                <div class="testimonial-card" data-aos="" data-aos-delay="10">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="testimonial-text">
                         As a startup, we needed a website that would make an impact. Starford Tech delivered a stunning design that perfectly communicates our brand and converts visitors. Their UI/UX expertise is exceptional, and they were great at understanding our technical requirements.
                     </div>
@@ -578,9 +437,9 @@
         </div>
     </section>
 
-     <!-- Newsletter -->
+    <!-- ===== Newsletter Section ===== -->
     <div class="container">
-        <div class="newsletter" data-aos="">
+        <div class="newsletter" data-aos="fade-up">
             <div class="newsletter-content">
                 <h2>Design Insights & Special Offers</h2>
                 <p>Subscribe to receive design tips, industry trends, and exclusive free resources</p>
@@ -592,179 +451,7 @@
         </div>
     </div>
 
-    <!-- ===== TEMPLATE DETAIL MODAL (for popular designs) ===== -->
-    <div class="modal-overlay" id="templateModal">
-        <div class="modal-content">
-            <button class="close-modal" id="closeModal">&times;</button>
-            
-            <div class="modal-header">
-                <img id="modalImage" src="" alt="Template Preview">
-                <div class="floating-actions">
-                    <button class="action-btn like" id="modalLikeBtn" title="Like this template">
-                        <i class="fas fa-heart"></i>
-                        <span class="action-count" id="modalLikeCount">0</span>
-                    </button>
-                    <button class="action-btn download" id="modalDownloadBtn" title="Download template">
-                        <i class="fas fa-download"></i>
-                    </button>
-                    <button class="action-btn favorite" id="modalFavoriteBtn" title="Add to favorites">
-                        <i class="fas fa-star"></i>
-                    </button>
-                    <button class="action-btn share" id="modalShareBtn" title="Share">
-                        <i class="fas fa-share-alt"></i>
-                    </button>
-                    <button class="action-btn bookmark" id="modalBookmarkBtn" title="Bookmark">
-                        <i class="fas fa-bookmark"></i>
-                    </button>
-                    <button class="action-btn expand" id="modalExpandBtn" title="View full size">
-                        <i class="fas fa-expand"></i>
-                    </button>
-                </div>
-                <div class="modal-badge" id="modalBadge">Popular</div>
-            </div>
-            
-            <div class="modal-body">
-                <div class="modal-header-info">
-                    <div>
-                        <h2 class="modal-title" id="modalTitle"></h2>
-                        <p class="modal-subtitle" id="modalSubtitle"></p>
-                    </div>
-                    <div class="modal-price" id="modalPrice">
-                        <span class="price-free">FREE</span>
-                    </div>
-                </div>
-
-                <!-- Detailed description sections -->
-                <div class="modal-description-container">
-                    <h3><i class="fas fa-align-left"></i> Description</h3>
-                    <p class="modal-description" id="modalDescription"></p>
-                </div>
-                
-                <div class="design-details-section">
-                    <h3><i class="fas fa-paint-brush"></i> Design Details</h3>
-                    <p id="designDetails"></p>
-                </div>
-                
-                <div class="materials-section">
-                    <h3><i class="fas fa-cubes"></i> Materials & Specifications</h3>
-                    <p id="materialsSpecs"></p>
-                </div>
-                
-                <div class="inspiration-section">
-                    <h3><i class="fas fa-lightbulb"></i> Design Inspiration</h3>
-                    <p id="designInspiration"></p>
-                </div>
-                
-                <div class="applications-section">
-                    <h3><i class="fas fa-rocket"></i> Practical Applications</h3>
-                    <p id="practicalApplications"></p>
-                </div>
-                
-                <!-- Full image preview -->
-                <div class="modal-full-image-container">
-                    <h3><i class="fas fa-image"></i> Full Preview</h3>
-                    <div class="modal-full-image-wrapper">
-                        <img id="modalFullImage" src="" alt="" class="modal-full-image">
-                    </div>
-                </div>
-
-                <!-- Design details grid -->
-                <div class="design-details-grid">
-                    <div class="detail-item">
-                        <h4>Category</h4>
-                        <p id="modalCategory"></p>
-                    </div>
-                    <div class="detail-item">
-                        <h4>File Formats</h4>
-                        <p id="modalFileFormat"></p>
-                    </div>
-                    <div class="detail-item">
-                        <h4>Dimensions</h4>
-                        <p id="modalDimensions"></p>
-                    </div>
-                    <div class="detail-item">
-                        <h4>Downloads</h4>
-                        <p id="modalDownloadCount"></p>
-                    </div>
-                    <div class="detail-item">
-                        <h4>Software</h4>
-                        <p id="modalSoftware"></p>
-                    </div>
-                    <div class="detail-item">
-                        <h4>Print Ready</h4>
-                        <p id="modalPrintReady"></p>
-                    </div>
-                    <div class="detail-item">
-                        <h4>Color Mode</h4>
-                        <p id="modalColorMode"></p>
-                    </div>
-                    <div class="detail-item">
-                        <h4>File Size</h4>
-                        <p id="modalFileSize"></p>
-                    </div>
-                </div>
-                
-                <!-- File format badges -->
-                <div class="file-formats-section">
-                    <h3><i class="fas fa-file"></i> Available Formats</h3>
-                    <div class="format-badges" id="formatBadges"></div>
-                </div>
-                
-                <!-- Color palette -->
-                <div class="color-palette-section">
-                    <h3><i class="fas fa-palette"></i> Color Palette</h3>
-                    <div class="colors" id="colorPalette"></div>
-                </div>
-                
-                <!-- Tags -->
-                <div class="tags-section">
-                    <h3><i class="fas fa-tags"></i> Tags</h3>
-                    <div class="tags" id="tagsContainer"></div>
-                </div>
-                
-                <!-- Key features -->
-                <div class="features-section">
-                    <h3><i class="fas fa-check-circle"></i> Key Features</h3>
-                    <ul id="featuresList"></ul>
-                </div>
-                
-                <!-- Action buttons -->
-                <div class="modal-actions">
-                    <button class="btn btn-primary" id="previewBtn">
-                        <i class="fas fa-eye"></i> Preview Full Size
-                    </button>
-                    <button class="btn btn-secondary" id="customizeBtn">
-                        <i class="fas fa-edit"></i> Customize Online
-                    </button>
-                    <button class="btn btn-success" id="downloadTemplateBtn">
-                        <i class="fas fa-download"></i> Download Template
-                    </button>
-                </div>
-                
-                <!-- Related designs -->
-                <div class="related-designs">
-                    <h3><i class="fas fa-link"></i> You Might Also Like</h3>
-                    <div class="related-grid" id="relatedDesigns"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- ===== SEARCH RESULTS MODAL ===== -->
-    <div class="search-modal" id="searchModal">
-        <div class="search-modal-content">
-            <div class="search-modal-header">
-                <h2><i class="fas fa-search"></i> Search Results</h2>
-                <button class="close-search-modal" id="closeSearchModal">&times;</button>
-            </div>
-            <div class="search-modal-body">
-                <div class="search-stats" id="searchStats"></div>
-                <div class="search-results-grid" id="searchResultsGrid"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
+    <!-- ===== Footer ===== -->
     <footer>
         <div class="footer-wave"></div>
         <div class="container">
@@ -891,14 +578,12 @@
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
 
-
     <!-- JavaScript Libraries -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-<!-- Main JavaScript -->
-<script src="./assets/js/index.js"></script>
-
+    <!-- Main JavaScript -->
+    <script src="../learn/file1.js"></script>
 </body>
 </html>
