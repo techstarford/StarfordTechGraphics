@@ -272,6 +272,81 @@ const serviceData = [
     }
 ];
 
+const popularData = [
+    {
+        id: 1,
+        title: "Academic year Calendar",
+        description: "Create a memorable brand with our comprehensive identity packages including logo design, color schemes, and typography.",
+        icon: "fas fa-palette",
+        features: ["Logo Design", "Brand Guidelines", "Business Cards", "Stationery Design"],
+        link: "./templates/calendars/index.html",
+        bgImage: "./assets/images/calendars/academic-year-calendar.jpg"
+    },
+    {
+        id: 2,
+        title: "Print Design",
+        description: "High-quality print materials that make an impression, from business collateral to large format printing.",
+        icon: "fas fa-print",
+        features: ["Brochures & Flyers", "Posters & Banners", "Magazine Layouts", "Annual Reports"],
+        link: "./templates/flyers/index.html",
+        bgImage: "./assets/images/photos/print-design-bg.jpg"
+    },
+    {
+        id: 3,
+        title: "Digital Design",
+        description: "Engaging digital assets optimized for web and social media to boost your online presence.",
+        icon: "fas fa-laptop-code",
+        features: ["Social Media Graphics", "Web Banners", "Email Templates", "Digital Ads"],
+        link: "./templates/social-media/index.html",
+        bgImage: "./assets/images/photos/digital-design-bg.jpg"
+    },
+    {
+        id: 4,
+        title: "Packaging Design",
+        description: "Eye-catching packaging that stands out on shelves and communicates your product's value.",
+        icon: "fas fa-box-open",
+        features: ["Product Labels", "Box & Bag Design", "Retail Displays", "Prototyping"],
+        link: "./templates/packaging.html",
+        bgImage: "./assets/images/photos/packaging-bg.jpg"
+    },
+    {
+        id: 5,
+        title: "Social Media Design",
+        description: "Intuitive and beautiful user interfaces that enhance user experience and drive engagement.",
+        icon: "fas fa-mobile-alt",
+        features: ["Website Design", "Mobile App Design", "User Flows", "Prototyping"],
+        link: "./templates/social-media/index.html",
+        bgImage: "./assets/images/photos/social-media-bg.jpg"
+    },
+    {
+        id: 6,
+        title: "Motion Graphics",
+        description: "Dynamic animated content that brings your brand to life and captures attention.",
+        icon: "fas fa-film",
+        features: ["Animated Logos", "Explainer Videos", "Social Media Ads", "Presentation Graphics"],
+        link: "./motion-graphics.html",
+        bgImage: "./assets/images/photos/motion-graphics-bg.jpg"
+    },
+    {
+        id: 7,
+        title: "Motion Graphics",
+        description: "Dynamic animated content that brings your brand to life and captures attention.",
+        icon: "fas fa-film",
+        features: ["Animated Logos", "Explainer Videos", "Social Media Ads", "Presentation Graphics"],
+        link: "./motion-graphics.html",
+        bgImage: "./assets/images/photos/motion-graphics-bg.jpg"
+    },
+     {
+        id: 8,
+        title: "Motion Graphics",
+        description: "Dynamic animated content that brings your brand to life and captures attention.",
+        icon: "fas fa-film",
+        features: ["Animated Logos", "Explainer Videos", "Social Media Ads", "Presentation Graphics"],
+        link: "./motion-graphics.html",
+        bgImage: "./assets/images/photos/motion-graphics-bg.jpg"
+    }
+];
+
 const portfolioData = [
     {
         id: 1,
@@ -350,6 +425,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load services
     loadServices();
     
+    // Load popular items
+    loadPopular();
+
     // Load portfolio items
     loadPortfolio();
     
@@ -474,6 +552,26 @@ function loadServices() {
                 `).join('')}
             </ul>
             <a href="${service.link}" class="btn">View Templates</a>
+        </div>
+    `).join('');
+}
+
+// ===== Load Popular Items =====
+function loadPopular() {
+    const popularGrid = document.querySelector('.popular-grid');
+    if (!popularGrid) return;
+    
+    popularGrid.innerHTML = popularData.map(item => `
+        <div class="popular-item" data-aos="">
+            <div class="popular-img">
+                <img src="${item.image}" alt="${item.title}" loading="lazy">
+                <span class="popular-category">${item.category}</span>
+            </div>
+            <div class="popular-content">
+                <h3>${item.title}</h3>
+                <p>${item.description}</p>
+                <a href="${item.link}" class="btn btn-outline">Like</a>
+            </div>
         </div>
     `).join('');
 }
