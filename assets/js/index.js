@@ -31,8 +31,6 @@ class StarfieldAnimation {
 
     createStars() {
         this.stars = [];
-        
-        // const starCount = Math.min(300, Math.floor((window.innerWidth * window.innerHeight) / 3300));
         const starCount = Math.min(400, Math.floor((window.innerWidth * window.innerHeight) / 2500));
 
         for (let i = 0; i < starCount; i++) {
@@ -76,21 +74,17 @@ class StarfieldAnimation {
         const time = Date.now() * 0.001;
         
         this.stars.forEach(star => {
-            // Move stars
             star.x += star.speedX;
             star.y += star.speedY;
             
-            // Wrap around edges
             if (star.x < -50) star.x = this.canvas.width + 50;
             if (star.x > this.canvas.width + 50) star.x = -50;
             if (star.y < -50) star.y = this.canvas.height + 50;
             if (star.y > this.canvas.height + 50) star.y = -50;
             
-            // Twinkle effect with sine wave
             star.opacity = 0.3 + Math.sin(time * star.twinkleSpeed + star.twinkleOffset) * 0.3;
             
-            // Draw star
-            const points = Math.floor(Math.random() * 2) + 4; // 4-5 points
+            const points = Math.floor(Math.random() * 2) + 4;
             const outerRadius = star.size;
             const innerRadius = star.size * 0.4;
             
@@ -118,31 +112,7 @@ class StarfieldAnimation {
     }
 }
 
-// ===== DOM Elements =====
-const mobileNavToggle = document.querySelectorAll('.mobile-nav-toggle');
-const mobileNav = document.getElementById('mobile-nav');
-const overlay = document.getElementById('overlay');
-const userBtn = document.getElementById('userBtn');
-const userDropdown = document.getElementById('userDropdown');
-const loginBtn = document.getElementById('loginBtn');
-const signupBtn = document.getElementById('signupBtn');
-const authModal = document.getElementById('authModal');
-const closeAuthModal = document.getElementById('closeAuthModal');
-const authTabs = document.querySelectorAll('.auth-tab');
-const authForms = document.querySelectorAll('.auth-form');
-const backToTop = document.getElementById('backToTop');
-const searchInput = document.getElementById('searchInput');
-const searchResults = document.getElementById('searchResults');
-const newsletterForm = document.getElementById('newsletterForm');
-const currentYear = document.getElementById('currentYear');
-
-// YouTube Popup Elements
-const youtubePopup = document.getElementById('youtubePopup');
-const closeYoutubePopup = document.getElementById('closeYoutubePopup');
-const subscribeBtn = document.getElementById('subscribeBtn');
-const viewChannelBtn = document.getElementById('viewChannelBtn');
-
-// ===== Search Data =====
+// ===== ORIGINAL DATA ARRAYS (for existing sections) =====
 const searchData = [
     { title: "Business Flyer", category: "Flyers", url: "./templates/flyers/business-flyers.html", tags: ["flyer", "business", "marketing"] },
     { title: "Logo Design", category: "Logos", url: "./templates/logos/index.html", tags: ["logo", "branding", "identity"] },
@@ -156,7 +126,6 @@ const searchData = [
     { title: "YouTube Thumbnail", category: "Social Media", url: "./templates/social-media/youtube-thumbnail.html", tags: ["youtube", "thumbnail", "video"] }
 ];
 
-// ===== Template Data =====
 const templateData = [
     {
         id: 1,
@@ -272,81 +241,6 @@ const serviceData = [
     }
 ];
 
-const popularData = [
-    {
-        id: 1,
-        title: "Academic year Calendar",
-        description: "Create a memorable brand with our comprehensive identity packages including logo design, color schemes, and typography.",
-        icon: "fas fa-palette",
-        features: ["Logo Design", "Brand Guidelines", "Business Cards", "Stationery Design"],
-        link: "./templates/calendars/index.html",
-        bgImage: "./assets/images/calendars/academic-year-calendar.jpg"
-    },
-    {
-        id: 2,
-        title: "Print Design",
-        description: "High-quality print materials that make an impression, from business collateral to large format printing.",
-        icon: "fas fa-print",
-        features: ["Brochures & Flyers", "Posters & Banners", "Magazine Layouts", "Annual Reports"],
-        link: "./templates/flyers/index.html",
-        bgImage: "./assets/images/photos/print-design-bg.jpg"
-    },
-    {
-        id: 3,
-        title: "Digital Design",
-        description: "Engaging digital assets optimized for web and social media to boost your online presence.",
-        icon: "fas fa-laptop-code",
-        features: ["Social Media Graphics", "Web Banners", "Email Templates", "Digital Ads"],
-        link: "./templates/social-media/index.html",
-        bgImage: "./assets/images/photos/digital-design-bg.jpg"
-    },
-    {
-        id: 4,
-        title: "Packaging Design",
-        description: "Eye-catching packaging that stands out on shelves and communicates your product's value.",
-        icon: "fas fa-box-open",
-        features: ["Product Labels", "Box & Bag Design", "Retail Displays", "Prototyping"],
-        link: "./templates/packaging.html",
-        bgImage: "./assets/images/photos/packaging-bg.jpg"
-    },
-    {
-        id: 5,
-        title: "Social Media Design",
-        description: "Intuitive and beautiful user interfaces that enhance user experience and drive engagement.",
-        icon: "fas fa-mobile-alt",
-        features: ["Website Design", "Mobile App Design", "User Flows", "Prototyping"],
-        link: "./templates/social-media/index.html",
-        bgImage: "./assets/images/photos/social-media-bg.jpg"
-    },
-    {
-        id: 6,
-        title: "Motion Graphics",
-        description: "Dynamic animated content that brings your brand to life and captures attention.",
-        icon: "fas fa-film",
-        features: ["Animated Logos", "Explainer Videos", "Social Media Ads", "Presentation Graphics"],
-        link: "./motion-graphics.html",
-        bgImage: "./assets/images/photos/motion-graphics-bg.jpg"
-    },
-    {
-        id: 7,
-        title: "Motion Graphics",
-        description: "Dynamic animated content that brings your brand to life and captures attention.",
-        icon: "fas fa-film",
-        features: ["Animated Logos", "Explainer Videos", "Social Media Ads", "Presentation Graphics"],
-        link: "./motion-graphics.html",
-        bgImage: "./assets/images/photos/motion-graphics-bg.jpg"
-    },
-     {
-        id: 8,
-        title: "Motion Graphics",
-        description: "Dynamic animated content that brings your brand to life and captures attention.",
-        icon: "fas fa-film",
-        features: ["Animated Logos", "Explainer Videos", "Social Media Ads", "Presentation Graphics"],
-        link: "./motion-graphics.html",
-        bgImage: "./assets/images/photos/motion-graphics-bg.jpg"
-    }
-];
-
 const portfolioData = [
     {
         id: 1,
@@ -409,100 +303,926 @@ const toolsData = [
     { name: "Procreate", icon: "fas fa-paint-brush" }
 ];
 
-// ===== Initialize when DOM is loaded =====
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize starfield animation FIRST
-    const starfield = new StarfieldAnimation();
+// ===== NEW COMPREHENSIVE TEMPLATE DATABASE (with placeholder images) =====
+const templateDatabase = {
+    flyers: [
+        {
+            id: 'flyer-1',
+            title: 'Modern Business Flyer',
+            description: 'Professional business flyer template perfect for corporate events and marketing campaigns.',
+            category: 'flyers',
+            subcategory: 'Business Flyers',
+            price: 'Free',
+            likes: 2345,
+            downloads: 12890,
+            rating: 4.9,
+            reviews: 456,
+            badge: '🔥 Trending',
+            image: '../../assets/images/flyers/new-week-flyer.jpg',
+            fullImage: 'https://via.placeholder.com/1200x800/4361ee/ffffff?text=Business+Flyer+Full',
+            fileFormats: ['AI', 'EPS', 'PSD', 'PDF'],
+            dimensions: '8.5" x 11" (US Letter)',
+            software: ['Adobe Illustrator', 'Adobe Photoshop'],
+            printReady: 'Yes, 300 DPI',
+            colorMode: 'CMYK',
+            fileSize: '45 MB',
+            tags: ['business', 'corporate', 'professional', 'marketing'],
+            designDetails: 'This modern business flyer features clean lines, professional typography, and ample space for your company information.',
+            materialsSpecs: 'Print on high-quality glossy paper for best results. Designed for 4-color offset printing with 300 DPI resolution.',
+            designInspiration: 'Inspired by contemporary corporate architecture and minimalist design principles.',
+            practicalApplications: 'Ideal for product launches, corporate announcements, business events, and trade show promotions.',
+            features: [
+                'Fully editable in Adobe Illustrator',
+                'Includes 5 color variations',
+                'Print-ready with bleed',
+                'Free fonts used',
+                'Well-organized layers'
+            ],
+            colors: ['#4361ee', '#3a0ca3', '#f72585', '#ffffff']
+        },
+        {
+            id: 'flyer-2',
+            title: 'Birthday Party Flyer',
+            description: 'Vibrant birthday flyer template with fun elements and customizable sections.',
+            category: 'flyers',
+            subcategory: 'Event Flyers',
+            price: 'Free',
+            likes: 1876,
+            downloads: 9450,
+            rating: 4.8,
+            reviews: 324,
+            badge: '🎉 Popular',
+            image: '../../assets/images/flyers/Claire_001 Birthday flyer.jpg',
+            fullImage: 'https://via.placeholder.com/1200x800/f72585/ffffff?text=Birthday+Full',
+            fileFormats: ['PSD', 'AI', 'PNG'],
+            dimensions: '8.5" x 11"',
+            software: ['Adobe Photoshop', 'Adobe Illustrator'],
+            printReady: 'Yes',
+            colorMode: 'RGB/CMYK',
+            fileSize: '35 MB',
+            tags: ['birthday', 'party', 'celebration', 'event'],
+            designDetails: 'Colorful and energetic birthday flyer with festive elements like balloons, confetti, and ribbons.',
+            materialsSpecs: 'Designed for both digital and print use. High-resolution files with organized layers.',
+            designInspiration: 'Inspired by modern party aesthetics and celebration culture.',
+            practicalApplications: 'Use for birthday invitations, party promotions, event announcements, and social media sharing.',
+            features: [
+                'Editable text and colors',
+                'Includes both RGB and CMYK versions',
+                'High-resolution print files',
+                'Free fonts included',
+                'Layered PSD files'
+            ],
+            colors: ['#ff6b6b', '#4ecdc4', '#ffe66d', '#c77dff']
+        },
+        {
+            id: 'flyer-3',
+            title: 'Real Estate Flyer',
+            description: 'Elegant real estate flyer template for property listings and open houses.',
+            category: 'flyers',
+            subcategory: 'Real Estate',
+            price: 'Free',
+            likes: 1567,
+            downloads: 7890,
+            rating: 4.7,
+            reviews: 278,
+            badge: '🏠 Featured',
+            image: '../../assets/images/photos/print-design-bg.jpg',
+            fullImage: '../../assets/images/photos/print-design-bg.jpg',
+            fileFormats: ['INDD', 'AI', 'PSD'],
+            dimensions: '8.5" x 11"',
+            software: ['Adobe InDesign', 'Adobe Illustrator'],
+            printReady: 'Yes',
+            colorMode: 'CMYK',
+            fileSize: '52 MB',
+            tags: ['real estate', 'property', 'housing', 'luxury'],
+            designDetails: 'Sophisticated real estate flyer designed to showcase luxury properties.',
+            materialsSpecs: 'Perfect for premium paper stocks with spot UV coating options.',
+            designInspiration: 'Luxury real estate marketing and architectural photography influence this clean design.',
+            practicalApplications: 'Ideal for property listings, open house promotions, and realtor marketing materials.',
+            features: [
+                'Multiple photo placeholders',
+                'Property details sections',
+                'Agent contact information',
+                'QR code placeholder',
+                'Social media icons'
+            ],
+            colors: ['#2c3e50', '#e74c3c', '#ecf0f1', '#bdc3c7']
+        },
+        {
+            id: 'flyer-4',
+            title: 'Music Concert Flyer',
+            description: 'Dynamic concert flyer template for music events, festivals, and live performances.',
+            category: 'flyers',
+            subcategory: 'Event Flyers',
+            price: 'Free',
+            likes: 2134,
+            downloads: 11230,
+            rating: 4.9,
+            reviews: 412,
+            badge: '🎵 Hot',
+            image: 'https://via.placeholder.com/600x400/ff3838/ffffff?text=Concert+Flyer',
+            fullImage: 'https://via.placeholder.com/1200x800/ff3838/ffffff?text=Concert+Full',
+            fileFormats: ['AI', 'PSD', 'EPS'],
+            dimensions: '11" x 17" (Poster Size)',
+            software: ['Adobe Illustrator', 'Adobe Photoshop'],
+            printReady: 'Yes',
+            colorMode: 'CMYK',
+            fileSize: '48 MB',
+            tags: ['concert', 'music', 'event', 'festival'],
+            designDetails: 'High-energy concert flyer with bold typography and dynamic graphic elements.',
+            materialsSpecs: 'Large format ready with high-resolution graphics. Suitable for posters and banners.',
+            designInspiration: 'Inspired by rock concert posters and music festival branding.',
+            practicalApplications: 'Use for concert promotions, music festival advertising, and club night events.',
+            features: [
+                'Bold typography styles',
+                'Multiple artist slots',
+                'Event details section',
+                'Ticket information area',
+                'Sponsor logo placements'
+            ],
+            colors: ['#000000', '#ff3838', '#ff9f1a', '#ffffff']
+        }
+    ],
+    logos: [
+        {
+            id: 'logo-1',
+            title: 'Minimalist Business Logo',
+            description: 'Clean and professional logo template for modern businesses and startups.',
+            category: 'logos',
+            subcategory: 'Business Logos',
+            price: 'Free',
+            likes: 3210,
+            downloads: 15678,
+            rating: 4.9,
+            reviews: 567,
+            badge: '⭐ Bestseller',
+            image: 'https://via.placeholder.com/600x400/2d4059/ffffff?text=Business+Logo',
+            fullImage: 'https://via.placeholder.com/1200x800/2d4059/ffffff?text=Logo+Full',
+            fileFormats: ['AI', 'EPS', 'SVG', 'PNG'],
+            dimensions: 'Vector (Scalable)',
+            software: ['Adobe Illustrator', 'CorelDRAW'],
+            printReady: 'Yes',
+            colorMode: 'RGB/CMYK',
+            fileSize: '12 MB',
+            tags: ['logo', 'business', 'minimal', 'corporate'],
+            designDetails: 'Sophisticated minimalist logo with clean lines and professional typography.',
+            materialsSpecs: 'Vector format ensures perfect scaling for any application.',
+            designInspiration: 'Modern corporate identity and minimalist design trends.',
+            practicalApplications: 'Ideal for business branding, corporate identity, and startup companies.',
+            features: [
+                'Fully vector editable',
+                'Multiple file formats',
+                'Color variations included',
+                'Black and white versions',
+                'Transparent backgrounds'
+            ],
+            colors: ['#2d4059', '#ea5455', '#eeeeee', '#222831']
+        },
+        {
+            id: 'logo-2',
+            title: 'Creative Abstract Logo',
+            description: 'Artistic and unique logo template for creative agencies and innovative brands.',
+            category: 'logos',
+            subcategory: 'Creative Logos',
+            price: 'Free',
+            likes: 2789,
+            downloads: 12345,
+            rating: 4.8,
+            reviews: 432,
+            badge: '🎨 Creative',
+            image: 'https://via.placeholder.com/600x400/8338ec/ffffff?text=Creative+Logo',
+            fullImage: 'https://via.placeholder.com/1200x800/8338ec/ffffff?text=Creative+Full',
+            fileFormats: ['AI', 'EPS', 'SVG', 'PDF'],
+            dimensions: 'Vector (Scalable)',
+            software: ['Adobe Illustrator', 'CorelDRAW'],
+            printReady: 'Yes',
+            colorMode: 'RGB/CMYK',
+            fileSize: '15 MB',
+            tags: ['creative', 'abstract', 'artistic', 'unique'],
+            designDetails: 'Artistic logo with abstract elements and creative typography.',
+            materialsSpecs: 'High-quality vector files with extensive customization options.',
+            designInspiration: 'Contemporary art and abstract expressionism influence this unique design.',
+            practicalApplications: 'Excellent for creative agencies, art galleries, and innovative brands.',
+            features: [
+                'Abstract shape elements',
+                'Creative typography',
+                'Multiple layout options',
+                'Gradient versions',
+                'Pattern fills'
+            ],
+            colors: ['#8338ec', '#3a86ff', '#ff006e', '#fb5607']
+        },
+        {
+            id: 'logo-3',
+            title: 'Luxury Gold Emblem',
+            description: 'Elegant luxury logo template with gold accents for premium brands.',
+            category: 'logos',
+            subcategory: 'Luxury Logos',
+            price: 'Free',
+            likes: 2345,
+            downloads: 10987,
+            rating: 4.9,
+            reviews: 389,
+            badge: '👑 Premium',
+            image: 'https://via.placeholder.com/600x400/bf9b30/ffffff?text=Luxury+Logo',
+            fullImage: 'https://via.placeholder.com/1200x800/bf9b30/ffffff?text=Luxury+Full',
+            fileFormats: ['AI', 'EPS', 'SVG', 'PNG'],
+            dimensions: 'Vector (Scalable)',
+            software: ['Adobe Illustrator', 'Adobe Photoshop'],
+            printReady: 'Yes',
+            colorMode: 'CMYK with metallic simulation',
+            fileSize: '18 MB',
+            tags: ['luxury', 'gold', 'elegant', 'premium'],
+            designDetails: 'Sophisticated emblem-style logo with gold accents and elegant typography.',
+            materialsSpecs: 'Includes metallic color simulation and special printing guides for foil stamping.',
+            designInspiration: 'Classic heraldry and modern luxury branding combine in this elegant design.',
+            practicalApplications: 'Ideal for luxury brands, premium services, and high-end retail.',
+            features: [
+                'Gold foil effect',
+                'Emblem style design',
+                'Monogram options',
+                'Seal variations',
+                'Embossing guide'
+            ],
+            colors: ['#bf9b30', '#aa8800', '#1a1a1a', '#ffffff']
+        },
+        {
+            id: 'logo-4',
+            title: 'Tech Startup Logo',
+            description: 'Modern technology logo template for startups and tech companies.',
+            category: 'logos',
+            subcategory: 'Technology Logos',
+            price: 'Free',
+            likes: 2987,
+            downloads: 13456,
+            rating: 4.8,
+            reviews: 456,
+            badge: '💻 Tech',
+            image: 'https://via.placeholder.com/600x400/4361ee/ffffff?text=Tech+Logo',
+            fullImage: 'https://via.placeholder.com/1200x800/4361ee/ffffff?text=Tech+Full',
+            fileFormats: ['AI', 'EPS', 'SVG', 'FIG'],
+            dimensions: 'Vector (Scalable)',
+            software: ['Adobe Illustrator', 'Figma'],
+            printReady: 'Yes',
+            colorMode: 'RGB/CMYK',
+            fileSize: '14 MB',
+            tags: ['tech', 'startup', 'digital', 'modern'],
+            designDetails: 'Contemporary tech logo with geometric elements and modern typography.',
+            materialsSpecs: 'Optimized for both digital and print applications with responsive scaling.',
+            designInspiration: 'Modern technology and digital innovation inspire this forward-thinking design.',
+            practicalApplications: 'Excellent for tech startups, software companies, and digital platforms.',
+            features: [
+                'Geometric shapes',
+                'Digital-first design',
+                'App icon included',
+                'Responsive variations',
+                'Animation ready'
+            ],
+            colors: ['#4361ee', '#4cc9f0', '#f72585', '#1a1a2e']
+        }
+    ],
+    businessCards: [
+        {
+            id: 'card-1',
+            title: 'Modern Business Card',
+            description: 'Sleek and professional business card template for corporate professionals.',
+            category: 'businessCards',
+            subcategory: 'Corporate',
+            price: 'Free',
+            likes: 1987,
+            downloads: 9876,
+            rating: 4.8,
+            reviews: 345,
+            badge: 'Popular',
+            image: 'https://via.placeholder.com/600x400/2c3e50/ffffff?text=Business+Card',
+            fullImage: 'https://via.placeholder.com/1200x800/2c3e50/ffffff?text=Card+Full',
+            fileFormats: ['AI', 'PSD', 'PDF', 'PNG'],
+            dimensions: '3.5" x 2" (Standard)',
+            software: ['Adobe Illustrator', 'Adobe Photoshop'],
+            printReady: 'Yes, 300 DPI with bleed',
+            colorMode: 'CMYK',
+            fileSize: '25 MB',
+            tags: ['business card', 'corporate', 'professional', 'minimal'],
+            designDetails: 'Contemporary business card design with clean typography and subtle geometric patterns.',
+            materialsSpecs: 'Print-ready with 0.125" bleed on all sides. Includes guides for standard and rounded corners.',
+            designInspiration: 'Modern corporate identity and minimalist design principles.',
+            practicalApplications: 'Perfect for executives, consultants, and professionals in any industry.',
+            features: [
+                'Double-sided design',
+                'Spot UV guide',
+                'Foil stamping options',
+                'Social media icons',
+                'QR code placeholder'
+            ],
+            colors: ['#2c3e50', '#34495e', '#ecf0f1', '#3498db']
+        },
+        {
+            id: 'card-2',
+            title: 'Creative Portfolio Card',
+            description: 'Artistic business card template for creative professionals and designers.',
+            category: 'businessCards',
+            subcategory: 'Creative',
+            price: 'Free',
+            likes: 1654,
+            downloads: 7654,
+            rating: 4.7,
+            reviews: 234,
+            badge: 'Trending',
+            image: 'https://via.placeholder.com/600x400/ff6b6b/ffffff?text=Creative+Card',
+            fullImage: 'https://via.placeholder.com/1200x800/ff6b6b/ffffff?text=Creative+Full',
+            fileFormats: ['AI', 'PSD', 'PDF'],
+            dimensions: '3.5" x 2"',
+            software: ['Adobe Illustrator', 'Adobe Photoshop'],
+            printReady: 'Yes',
+            colorMode: 'CMYK',
+            fileSize: '28 MB',
+            tags: ['creative', 'designer', 'portfolio', 'artistic'],
+            designDetails: 'Artistic business card with creative layout options, perfect for photographers, designers, and artists to showcase their portfolio.',
+            materialsSpecs: 'High-quality design suitable for specialty papers and unique finishes.',
+            designInspiration: 'Art gallery aesthetics and portfolio presentations inspire this creative card design.',
+            practicalApplications: 'Ideal for creative professionals, artists, photographers, and designers.',
+            features: [
+                'Portfolio image space',
+                'Creative typography',
+                'Multiple layout options',
+                'Texture overlays',
+                'Bleed marks included'
+            ],
+            colors: ['#ff6b6b', '#4ecdc4', '#45b7d1', '#96ceb4']
+        },
+        {
+            id: 'card-3',
+            title: 'Luxury Gold Business Card',
+            description: 'Elegant business card template with gold accents for premium branding.',
+            category: 'businessCards',
+            subcategory: 'Luxury',
+            price: 'Free',
+            likes: 1432,
+            downloads: 6543,
+            rating: 4.9,
+            reviews: 198,
+            badge: 'Premium',
+            image: 'https://via.placeholder.com/600x400/d4af37/000000?text=Gold+Card',
+            fullImage: 'https://via.placeholder.com/1200x800/d4af37/000000?text=Gold+Full',
+            fileFormats: ['AI', 'EPS', 'PDF'],
+            dimensions: '3.5" x 2"',
+            software: ['Adobe Illustrator'],
+            printReady: 'Yes',
+            colorMode: 'CMYK with metallic simulation',
+            fileSize: '22 MB',
+            tags: ['luxury', 'gold', 'elegant', 'premium'],
+            designDetails: 'Sophisticated business card with gold foil effects and elegant typography. Perfect for luxury brands and high-end services.',
+            materialsSpecs: 'Includes guides for gold foil stamping, embossing, and specialty printing techniques.',
+            designInspiration: 'Luxury branding and high-end stationery influence this elegant, premium card design.',
+            practicalApplications: 'Ideal for luxury brands, high-end retailers, exclusive services, and premium professionals.',
+            features: [
+                'Gold foil guide',
+                'Embossing layers',
+                'Debossing options',
+                'Letterpress ready',
+                'Thick stock templates'
+            ],
+            colors: ['#d4af37', '#aa8800', '#1a1a1a', '#f8f8f8']
+        },
+        {
+            id: 'card-4',
+            title: 'Tech Minimal Card',
+            description: 'Sleek minimal business card template for tech startups and digital agencies.',
+            category: 'businessCards',
+            subcategory: 'Technology',
+            price: 'Free',
+            likes: 1765,
+            downloads: 8765,
+            rating: 4.8,
+            reviews: 267,
+            badge: 'Popular',
+            image: 'https://via.placeholder.com/600x400/1a1a2e/ffffff?text=Tech+Card',
+            fullImage: 'https://via.placeholder.com/1200x800/1a1a2e/ffffff?text=Tech+Full',
+            fileFormats: ['AI', 'FIG', 'SVG', 'PDF'],
+            dimensions: '3.5" x 2"',
+            software: ['Adobe Illustrator', 'Figma'],
+            printReady: 'Yes',
+            colorMode: 'RGB/CMYK',
+            fileSize: '16 MB',
+            tags: ['tech', 'minimal', 'startup', 'digital'],
+            designDetails: 'Ultra-minimal tech business card with clean lines and modern typography. Perfect for startups and digital agencies.',
+            materialsSpecs: 'Optimized for both digital business cards and print. Includes NFC card integration guide.',
+            designInspiration: 'Digital interfaces and modern tech aesthetics inspire this clean, minimal design.',
+            practicalApplications: 'Perfect for tech startups, software companies, digital agencies, and IT professionals.',
+            features: [
+                'QR code integration',
+                'NFC card guide',
+                'Digital version included',
+                'Social media handles',
+                'App icon style'
+            ],
+            colors: ['#1a1a2e', '#16213e', '#0f3460', '#e94560']
+        }
+    ],
+    socialMedia: [
+        {
+            id: 'social-1',
+            title: 'Instagram Story Pack',
+            description: '50+ Instagram story templates for business and personal branding.',
+            category: 'social',
+            subcategory: 'Instagram Stories',
+            price: 'Free',
+            likes: 4567,
+            downloads: 23456,
+            rating: 4.9,
+            reviews: 678,
+            badge: 'Bestseller',
+            image: 'https://via.placeholder.com/600x400/833ab4/ffffff?text=Instagram+Stories',
+            fullImage: 'https://via.placeholder.com/1200x800/833ab4/ffffff?text=Stories+Full',
+            fileFormats: ['PSD', 'FIG', 'PNG', 'MP4'],
+            dimensions: '1080 x 1920 px',
+            software: ['Adobe Photoshop', 'Figma', 'Canva'],
+            printReady: 'No (Digital Only)',
+            colorMode: 'RGB',
+            fileSize: '85 MB',
+            tags: ['instagram', 'stories', 'social media', 'templates'],
+            designDetails: 'Complete Instagram story template pack with 50+ unique designs for promotions, announcements, and engagement.',
+            materialsSpecs: 'Optimized for Instagram stories with proper dimensions and mobile-friendly layouts.',
+            designInspiration: 'Current social media trends and engagement strategies influence these story designs.',
+            practicalApplications: 'Perfect for Instagram marketing, brand storytelling, product launches, and daily engagement.',
+            features: [
+                'Question stickers',
+                'Poll templates',
+                'Countdown designs',
+                'Quote cards',
+                'Product showcases',
+                'Link stickers included'
+            ],
+            colors: ['#833ab4', '#fd1d1d', '#fcb045', '#405de6']
+        },
+        {
+            id: 'social-2',
+            title: 'Facebook Cover Pack',
+            description: 'Professional Facebook cover templates for business pages and profiles.',
+            category: 'social',
+            subcategory: 'Facebook Covers',
+            price: 'Free',
+            likes: 3456,
+            downloads: 15678,
+            rating: 4.8,
+            reviews: 456,
+            badge: 'Popular',
+            image: 'https://via.placeholder.com/600x400/1877f2/ffffff?text=Facebook+Covers',
+            fullImage: 'https://via.placeholder.com/1200x800/1877f2/ffffff?text=Covers+Full',
+            fileFormats: ['PSD', 'AI', 'JPG', 'PNG'],
+            dimensions: '851 x 315 px',
+            software: ['Adobe Photoshop', 'Adobe Illustrator'],
+            printReady: 'No',
+            colorMode: 'RGB',
+            fileSize: '45 MB',
+            tags: ['facebook', 'cover', 'social media', 'profile'],
+            designDetails: '20 professional Facebook cover templates for business pages, events, and promotions.',
+            materialsSpecs: 'Optimized for Facebook timeline with proper image dimensions and placement guides.',
+            designInspiration: 'Facebook best practices and professional page design principles.',
+            practicalApplications: 'Ideal for Facebook business pages, event promotions, and professional profiles.',
+            features: [
+                'Profile picture integration',
+                'Call-to-action buttons',
+                'Event promotion space',
+                'Product showcases',
+                'Contact information',
+                'Branded backgrounds'
+            ],
+            colors: ['#1877f2', '#42b72a', '#f0f2f5', '#1c1e21']
+        }
+    ],
+    posters: [
+        {
+            id: 'poster-1',
+            title: 'Movie Poster Template',
+            description: 'Dramatic movie poster template for film promotions and events.',
+            category: 'posters',
+            subcategory: 'Movie Posters',
+            price: 'Free',
+            likes: 3456,
+            downloads: 16789,
+            rating: 4.8,
+            reviews: 567,
+            badge: 'Popular',
+            image: 'https://via.placeholder.com/600x400/8b0000/ffffff?text=Movie+Poster',
+            fullImage: 'https://via.placeholder.com/1200x800/8b0000/ffffff?text=Poster+Full',
+            fileFormats: ['PSD', 'AI', 'PDF'],
+            dimensions: '27" x 40" (Standard Movie)',
+            software: ['Adobe Photoshop', 'Adobe Illustrator'],
+            printReady: 'Yes, 300 DPI',
+            colorMode: 'CMYK',
+            fileSize: '125 MB',
+            tags: ['movie', 'film', 'poster', 'cinema'],
+            designDetails: 'Professional movie poster template with dramatic layout for cast, crew, and film information.',
+            materialsSpecs: 'Large format print-ready with high-resolution images and proper bleed.',
+            designInspiration: 'Hollywood movie posters and cinematic design principles.',
+            practicalApplications: 'Perfect for film promotions, movie events, and theatrical releases.',
+            features: [
+                'Title treatment area',
+                'Cast and crew list',
+                'Release date',
+                'Rating information',
+                'Studio logos',
+                'Tagline space'
+            ],
+            colors: ['#1a1a1a', '#8b0000', '#c0c0c0', '#f5f5f5']
+        }
+    ],
+    calendars: [
+        {
+            id: 'calendar-1',
+            title: '2026 Wall Calendar',
+            description: 'Beautiful wall calendar template for 2026 with monthly designs.',
+            category: 'calendars',
+            subcategory: 'Wall Calendars',
+            price: 'Free',
+            likes: 3456,
+            downloads: 17890,
+            rating: 4.9,
+            reviews: 567,
+            badge: 'New',
+            image: 'https://via.placeholder.com/600x400/4361ee/ffffff?text=2026+Calendar',
+            fullImage: 'https://via.placeholder.com/1200x800/4361ee/ffffff?text=Calendar+Full',
+            fileFormats: ['INDD', 'AI', 'PDF', 'PSD'],
+            dimensions: '12" x 12" (Closed)',
+            software: ['Adobe InDesign', 'Adobe Illustrator'],
+            printReady: 'Yes, with spiral binding guides',
+            colorMode: 'CMYK',
+            fileSize: '156 MB',
+            tags: ['calendar', '2026', 'wall', 'yearly'],
+            designDetails: 'Complete 2026 wall calendar with unique monthly designs, holiday markers, and ample writing space.',
+            materialsSpecs: 'Print-ready with spiral binding guides and cover design included.',
+            designInspiration: 'Modern calendar design with artistic monthly themes.',
+            practicalApplications: 'Perfect for home, office, or promotional giveaways.',
+            features: [
+                '12 monthly spreads',
+                'Cover design',
+                'Holiday markers',
+                'Moon phases',
+                'Notes section',
+                'Back cover with overview'
+            ],
+            colors: ['#4361ee', '#f72585', '#4cc9f0', '#7209b7']
+        }
+    ]
+};
+
+// Combine all templates into one array for search and popular
+const allTemplates = [
+    ...templateDatabase.flyers,
+    ...templateDatabase.logos,
+    ...templateDatabase.businessCards,
+    ...templateDatabase.socialMedia,
+    ...templateDatabase.posters,
+    ...templateDatabase.calendars
+];
+
+// Popular designs (select first 12)
+const popularDesigns = allTemplates.slice(0, 12).map((item, index) => ({
+    ...item,
+    id: item.id || `pop-${index}`,
+    badge: item.badge || (index < 3 ? '🔥 Hot' : null)
+}));
+
+// ===== DOM Elements =====
+const mobileNavToggle = document.querySelectorAll('.mobile-nav-toggle');
+const mobileNav = document.getElementById('mobile-nav');
+const overlay = document.getElementById('overlay');
+const userBtn = document.getElementById('userBtn');
+const userDropdown = document.getElementById('userDropdown');
+const loginBtn = document.getElementById('loginBtn');
+const signupBtn = document.getElementById('signupBtn');
+const authModal = document.getElementById('authModal');
+const closeAuthModal = document.getElementById('closeAuthModal');
+const authTabs = document.querySelectorAll('.auth-tab');
+const authForms = document.querySelectorAll('.auth-form');
+const backToTop = document.getElementById('backToTop');
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+const newsletterForm = document.getElementById('newsletterForm');
+const currentYear = document.getElementById('currentYear');
+
+// YouTube Popup Elements
+const youtubePopup = document.getElementById('youtubePopup');
+const closeYoutubePopup = document.getElementById('closeYoutubePopup');
+const subscribeBtn = document.getElementById('subscribeBtn');
+const viewChannelBtn = document.getElementById('viewChannelBtn');
+
+// New elements for popular section
+const popularGrid = document.getElementById('popularGrid');
+const filterButtons = document.querySelectorAll('.filter-popular-btn');
+const loadMoreBtn = document.getElementById('loadMorePopularBtn');
+const templateModal = document.getElementById('templateModal'); // Ensure this ID exists in HTML
+const modalCloseBtn = document.getElementById('closeModal'); // Ensure this ID exists
+const searchModal = document.getElementById('searchModal'); // Ensure this ID exists
+const closeSearchModal = document.getElementById('closeSearchModal'); // Ensure this ID exists
+
+// State
+let displayedCount = 8;
+let currentFilter = 'all';
+let likedTemplates = JSON.parse(localStorage.getItem('likedTemplates')) || {};
+
+// ===== NEW FUNCTIONS =====
+function renderPopularGrid() {
+    if (!popularGrid) {
+        console.warn('Popular grid not found');
+        return;
+    }
+    const filtered = filterDesigns(popularDesigns, currentFilter);
+    const toShow = filtered.slice(0, displayedCount);
     
-    // Set current year in footer
-    if (currentYear) {
-        currentYear.textContent = new Date().getFullYear();
+    if (toShow.length === 0) {
+        popularGrid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:50px;">No designs in this category.</div>';
+        return;
     }
     
-    // Load template data
-    loadTemplates();
+    popularGrid.innerHTML = toShow.map(design => createCardHTML(design)).join('');
     
-    // Load services
-    loadServices();
-    
-    // Load popular items
-    loadPopular();
-
-    // Load portfolio items
-    loadPortfolio();
-    
-    // Load tools
-    loadTools();
-    
-    // Initialize AOS
-    AOS.init({
-        duration: 200,
-        easing: 'ease-in-out',
-        once: true,
-        offset: 0,
-        delay: 0,
-        mirror: false,
-        anchorPlacement: 'top-bottom',
+    // Attach click listeners to cards
+    document.querySelectorAll('.popular-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.popular-likes i')) return;
+            const id = card.dataset.id;
+            const design = popularDesigns.find(d => d.id === id) || allTemplates.find(d => d.id === id);
+            if (design) {
+                openModal(design);
+            } else {
+                console.error('Design not found for id:', id);
+            }
+        });
     });
     
-    // Initialize Slick slider
-    initializeSlider();
-    
-    // Setup YouTube Popup
-    setupYouTubePopup();
-});
-
-// ===== YouTube Popup Functions =====
-function setupYouTubePopup() {
-    if (!youtubePopup) return;
-    
-    // Show YouTube popup after delay
-    setTimeout(() => {
-        youtubePopup.classList.add('active');
-        overlay.classList.add('active');
-    }, 5000);
-
-    // Close YouTube Popup
-    if (closeYoutubePopup) {
-        closeYoutubePopup.addEventListener('click', hideYoutubePopup);
-    }
-
-    // Subscribe Button
-    if (subscribeBtn) {
-        subscribeBtn.addEventListener('click', () => {
-            alert('Redirecting to YouTube to subscribe to our channel!');
-            window.open('https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw', '_blank');
-            hideYoutubePopup();
+    // Like button listeners
+    document.querySelectorAll('.popular-likes i').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const card = btn.closest('.popular-card');
+            const id = card.dataset.id;
+            toggleLike(id, btn);
         });
-    }
-
-    // View Channel Button
-    if (viewChannelBtn) {
-        viewChannelBtn.addEventListener('click', () => {
-            window.open('https://www.youtube.com/@starford.tech7', '_blank');
-            hideYoutubePopup();
-        });
-    }
-
-    // Close popup when clicking outside
-    document.addEventListener('click', (e) => {
-        if (youtubePopup.classList.contains('active') && 
-            !youtubePopup.contains(e.target)) {
-            hideYoutubePopup();
+        const id = btn.closest('.popular-card').dataset.id;
+        if (likedTemplates[id]) {
+            btn.classList.add('active', 'fas');
+            btn.classList.remove('far');
         }
     });
-}
-
-function hideYoutubePopup() {
-    if (youtubePopup) {
-        youtubePopup.classList.remove('active');
-    }
-    if (overlay) {
-        overlay.classList.remove('active');
+    
+    // Load more button visibility
+    if (loadMoreBtn) {
+        loadMoreBtn.style.display = displayedCount >= filtered.length ? 'none' : 'inline-flex';
     }
 }
 
-// ===== Load Templates =====
+function createCardHTML(d) {
+    const liked = likedTemplates[d.id] ? 'fas' : 'far';
+    return `
+        <div class="popular-card" data-id="${d.id}" data-category="${d.category}">
+            ${d.badge ? `<div class="popular-badge">${d.badge}</div>` : ''}
+            <div class="popular-img">
+                <img src="${d.image}" alt="${d.title}" loading="lazy">
+            </div>
+            <div class="popular-info">
+                <h3>${d.title}</h3>
+                <p>${d.description.substring(0,60)}...</p>
+                <div class="popular-meta">
+                    <div class="popular-stats">
+                        <span class="popular-likes"><i class="${liked} fa-heart"></i> ${formatNumber(d.likes)}</span>
+                        <span class="popular-downloads"><i class="fas fa-download"></i> ${formatNumber(d.downloads)}</span>
+                    </div>
+                    <span class="popular-price">${d.price}</span>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function filterDesigns(arr, filter) {
+    if (filter === 'all') return arr;
+    return arr.filter(d => d.category === filter);
+}
+
+function openModal(design) {
+    if (!templateModal) {
+        console.error('Modal element not found. Make sure #templateModal exists in HTML.');
+        return;
+    }
+
+    // Helper to safely set element properties
+    const setElem = (id, prop, val) => {
+        const el = document.getElementById(id);
+        if (el) el[prop] = val;
+        else console.warn(`Element #${id} not found in modal`);
+    };
+
+    setElem('modalImage', 'src', design.image);
+    setElem('modalFullImage', 'src', design.fullImage || design.image);
+    setElem('modalTitle', 'textContent', design.title);
+    setElem('modalSubtitle', 'textContent', design.subcategory || design.category);
+    setElem('modalDescription', 'textContent', design.description);
+    setElem('modalCategory', 'textContent', design.subcategory || design.category);
+    setElem('modalFileFormat', 'textContent', design.fileFormats ? design.fileFormats.join(', ') : '');
+    setElem('modalDimensions', 'textContent', design.dimensions || '');
+    setElem('modalDownloadCount', 'textContent', formatNumber(design.downloads));
+    setElem('modalSoftware', 'textContent', design.software ? design.software.join(', ') : '');
+    setElem('modalPrintReady', 'textContent', design.printReady || '');
+    setElem('modalColorMode', 'textContent', design.colorMode || '');
+    setElem('modalFileSize', 'textContent', design.fileSize || '');
+    setElem('designDetails', 'textContent', design.designDetails || '');
+    setElem('materialsSpecs', 'textContent', design.materialsSpecs || '');
+    setElem('designInspiration', 'textContent', design.designInspiration || '');
+    setElem('practicalApplications', 'textContent', design.practicalApplications || '');
+    setElem('modalBadge', 'textContent', design.badge || 'Popular');
+
+    // Format badges
+    const formatBadges = document.getElementById('formatBadges');
+    if (formatBadges && design.fileFormats) {
+        formatBadges.innerHTML = design.fileFormats.map(f => `<span class="format-badge">${f}</span>`).join('');
+    }
+
+    // Color palette
+    const colorPalette = document.getElementById('colorPalette');
+    if (colorPalette && design.colors) {
+        colorPalette.innerHTML = design.colors.map(c => `<div class="color" style="background:${c}" title="${c}"></div>`).join('');
+    }
+
+    // Tags
+    const tagsContainer = document.getElementById('tagsContainer');
+    if (tagsContainer && design.tags) {
+        tagsContainer.innerHTML = design.tags.map(t => `<span class="tag">${t}</span>`).join('');
+    }
+
+    // Features
+    const featuresList = document.getElementById('featuresList');
+    if (featuresList && design.features) {
+        featuresList.innerHTML = design.features.map(f => `<li>${f}</li>`).join('');
+    }
+
+    // Like button in modal
+    const modalLikeBtn = document.getElementById('modalLikeBtn');
+    const modalLikeCount = document.getElementById('modalLikeCount');
+    if (modalLikeBtn && modalLikeCount) {
+        const isLiked = likedTemplates[design.id];
+        modalLikeBtn.innerHTML = `<i class="${isLiked ? 'fas' : 'far'} fa-heart"></i>`;
+        modalLikeCount.textContent = formatNumber(design.likes);
+        modalLikeBtn.onclick = () => {
+            toggleLike(design.id, modalLikeBtn.querySelector('i'));
+            modalLikeCount.textContent = formatNumber(design.likes);
+        };
+    }
+
+    // Related designs
+    const relatedGrid = document.getElementById('relatedDesigns');
+    if (relatedGrid) {
+        const sameCat = allTemplates.filter(d => d.category === design.category && d.id !== design.id).slice(0, 4);
+        if (sameCat.length) {
+            relatedGrid.innerHTML = sameCat.map(d => `
+                <div class="related-item" data-id="${d.id}">
+                    <img src="${d.image}" alt="${d.title}">
+                    <div class="related-overlay"><span>${d.title}</span></div>
+                </div>
+            `).join('');
+            document.querySelectorAll('.related-item').forEach(el => {
+                el.addEventListener('click', () => {
+                    const id = el.dataset.id;
+                    const relatedDesign = allTemplates.find(t => t.id === id);
+                    if (relatedDesign) openModal(relatedDesign);
+                });
+            });
+        } else {
+            const relatedSection = relatedGrid.closest('.related-designs');
+            if (relatedSection) relatedSection.style.display = 'none';
+        }
+    }
+
+    // Show modal
+    templateModal.classList.add('active');
+    if (overlay) overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeTemplateModal() {
+    if (templateModal) templateModal.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+function toggleLike(id, iconEl) {
+    if (likedTemplates[id]) {
+        delete likedTemplates[id];
+        iconEl.classList.remove('active', 'fas');
+        iconEl.classList.add('far');
+    } else {
+        likedTemplates[id] = true;
+        iconEl.classList.add('active', 'fas');
+        iconEl.classList.remove('far');
+    }
+    localStorage.setItem('likedTemplates', JSON.stringify(likedTemplates));
+    
+    const design = allTemplates.find(d => d.id === id) || popularDesigns.find(d => d.id === id);
+    if (design) {
+        if (likedTemplates[id]) design.likes += 1;
+        else design.likes -= 1;
+        const card = document.querySelector(`.popular-card[data-id="${id}"]`);
+        if (card) {
+            const countSpan = card.querySelector('.popular-likes');
+            if (countSpan) {
+                const textNode = countSpan.childNodes[2];
+                if (textNode) textNode.textContent = ' ' + formatNumber(design.likes);
+            }
+        }
+    }
+}
+
+function formatNumber(num) {
+    if (num >= 1000000) return (num/1000000).toFixed(1)+'M';
+    if (num >= 1000) return (num/1000).toFixed(1)+'K';
+    return num.toString();
+}
+
+// ===== SEARCH FUNCTIONALITY =====
+function setupSearch() {
+    if (!searchInput) {
+        console.warn('Search input not found');
+        return;
+    }
+    
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            const term = searchInput.value.trim();
+            if (term) performSearch(term);
+        }
+    });
+    
+    const searchIcon = document.querySelector('.search-box i');
+    if (searchIcon) {
+        searchIcon.addEventListener('click', () => {
+            const term = searchInput.value.trim();
+            if (term) performSearch(term);
+        });
+    }
+}
+
+function performSearch(term) {
+    const results = allTemplates.filter(d =>
+        d.title.toLowerCase().includes(term.toLowerCase()) ||
+        d.description.toLowerCase().includes(term.toLowerCase()) ||
+        (d.tags && d.tags.some(t => t.toLowerCase().includes(term.toLowerCase()))) ||
+        d.category.toLowerCase().includes(term.toLowerCase()) ||
+        (d.subcategory && d.subcategory.toLowerCase().includes(term.toLowerCase()))
+    );
+    displaySearchResults(results, term);
+}
+
+function displaySearchResults(results, term) {
+    if (!searchModal) {
+        alert(`Found ${results.length} results for "${term}"`);
+        return;
+    }
+    
+    const stats = document.getElementById('searchStats');
+    const grid = document.getElementById('searchResultsGrid');
+    
+    if (stats) stats.textContent = `Found ${results.length} results for "${term}"`;
+    
+    if (grid) {
+        if (results.length) {
+            grid.innerHTML = results.map(r => `
+                <div class="search-result-card" data-id="${r.id}">
+                    <div class="search-result-img">
+                        <img src="${r.image}" alt="${r.title}" loading="lazy">
+                    </div>
+                    <div class="search-result-info">
+                        <h4>${r.title}</h4>
+                        <p>${r.description.substring(0,60)}...</p>
+                        <span class="search-result-category">${r.category}</span>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Attach click handlers to search results
+            document.querySelectorAll('.search-result-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const id = card.dataset.id;
+                    const design = allTemplates.find(d => d.id === id);
+                    if (design) {
+                        openModal(design);
+                        searchModal.classList.remove('active');
+                        if (overlay) overlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
+            });
+        } else {
+            grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:50px;">No results found.</div>';
+        }
+    }
+    
+    searchModal.classList.add('active');
+    if (overlay) overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// ===== ORIGINAL FUNCTIONS =====
 function loadTemplates() {
     const slider = document.querySelector('.featured-slider');
     if (!slider) return;
@@ -529,7 +1249,6 @@ function loadTemplates() {
     `).join('');
 }
 
-// ===== Load Services =====
 function loadServices() {
     const servicesGrid = document.querySelector('.services-grid');
     if (!servicesGrid) return;
@@ -556,27 +1275,6 @@ function loadServices() {
     `).join('');
 }
 
-// ===== Load Popular Items =====
-function loadPopular() {
-    const popularGrid = document.querySelector('.popular-grid');
-    if (!popularGrid) return;
-    
-    popularGrid.innerHTML = popularData.map(item => `
-        <div class="popular-item" data-aos="">
-            <div class="popular-img">
-                <img src="${item.image}" alt="${item.title}" loading="lazy">
-                <span class="popular-category">${item.category}</span>
-            </div>
-            <div class="popular-content">
-                <h3>${item.title}</h3>
-                <p>${item.description}</p>
-                <a href="${item.link}" class="btn btn-outline">Like</a>
-            </div>
-        </div>
-    `).join('');
-}
-
-// ===== Load Portfolio Items =====
 function loadPortfolio() {
     const portfolioGrid = document.querySelector('.portfolio-grid');
     if (!portfolioGrid) return;
@@ -596,7 +1294,6 @@ function loadPortfolio() {
     `).join('');
 }
 
-// ===== Load Tools =====
 function loadTools() {
     const toolsGrid = document.querySelector('.tools-grid');
     if (!toolsGrid) return;
@@ -609,7 +1306,6 @@ function loadTools() {
     `).join('');
 }
 
-// ===== Initialize Slick Slider =====
 function initializeSlider() {
     if (typeof $ !== 'undefined' && $('.featured-slider').length) {
         $('.featured-slider').slick({
@@ -620,24 +1316,53 @@ function initializeSlider() {
             arrows: true,
             dots: true,
             responsive: [
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 2
-                    }
-                },
-                {
-                    breakpoint: 576,
-                    settings: {
-                        slidesToShow: 1
-                    }
-                }
+                { breakpoint: 992, settings: { slidesToShow: 2 } },
+                { breakpoint: 576, settings: { slidesToShow: 1 } }
             ]
         });
     }
 }
 
-// ===== Mobile Navigation Toggle =====
+function setupYouTubePopup() {
+    if (!youtubePopup) return;
+    
+    setTimeout(() => {
+        youtubePopup.classList.add('active');
+        if (overlay) overlay.classList.add('active');
+    }, 5000);
+
+    if (closeYoutubePopup) {
+        closeYoutubePopup.addEventListener('click', hideYoutubePopup);
+    }
+
+    if (subscribeBtn) {
+        subscribeBtn.addEventListener('click', () => {
+            alert('Redirecting to YouTube to subscribe to our channel!');
+            window.open('https://www.youtube.com/channel/UC_x5XG1OV2P6uZZ5FSM9Ttw', '_blank');
+            hideYoutubePopup();
+        });
+    }
+
+    if (viewChannelBtn) {
+        viewChannelBtn.addEventListener('click', () => {
+            window.open('https://www.youtube.com/@starford.tech7', '_blank');
+            hideYoutubePopup();
+        });
+    }
+
+    document.addEventListener('click', (e) => {
+        if (youtubePopup.classList.contains('active') && !youtubePopup.contains(e.target)) {
+            hideYoutubePopup();
+        }
+    });
+}
+
+function hideYoutubePopup() {
+    if (youtubePopup) youtubePopup.classList.remove('active');
+    if (overlay) overlay.classList.remove('active');
+}
+
+// ===== ORIGINAL EVENT LISTENERS (unchanged) =====
 if (mobileNavToggle.length > 0) {
     mobileNavToggle.forEach(toggle => {
         toggle.addEventListener('click', () => {
@@ -650,7 +1375,6 @@ if (mobileNavToggle.length > 0) {
     });
 }
 
-// ===== Close mobile menu when clicking on overlay =====
 if (overlay) {
     overlay.addEventListener('click', () => {
         if (mobileNavToggle.length > 0) {
@@ -664,7 +1388,6 @@ if (overlay) {
     });
 }
 
-// ===== Mobile dropdown toggle =====
 const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
 if (mobileDropdownToggles.length > 0) {
     mobileDropdownToggles.forEach(toggle => {
@@ -685,14 +1408,12 @@ if (mobileDropdownToggles.length > 0) {
     });
 }
 
-// ===== User Button Dropdown =====
 if (userBtn && userDropdown) {
     userBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         userDropdown.classList.toggle('active');
     });
 
-    // Close user dropdown when clicking outside
     document.addEventListener('click', (e) => {
         if (!userBtn.contains(e.target) && !userDropdown.contains(e.target)) {
             userDropdown.classList.remove('active');
@@ -700,7 +1421,6 @@ if (userBtn && userDropdown) {
     });
 }
 
-// ===== Auth Modal =====
 if (loginBtn && authModal) {
     loginBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -740,7 +1460,6 @@ function closeModal() {
     document.body.classList.remove('no-scroll');
 }
 
-// ===== Auth Tabs =====
 if (authTabs.length > 0) {
     authTabs.forEach(tab => {
         tab.addEventListener('click', () => {
@@ -751,7 +1470,6 @@ if (authTabs.length > 0) {
 }
 
 function switchTab(tabId) {
-    // Remove active class from all tabs
     if (authTabs.length > 0) {
         authTabs.forEach(tab => {
             tab.classList.remove('active');
@@ -761,7 +1479,6 @@ function switchTab(tabId) {
         });
     }
     
-    // Hide all forms
     if (authForms.length > 0) {
         authForms.forEach(form => {
             form.classList.remove('active');
@@ -772,7 +1489,6 @@ function switchTab(tabId) {
     }
 }
 
-// ===== Form submissions =====
 const loginForm = document.getElementById('loginForm');
 const signupForm = document.getElementById('signupForm');
 
@@ -832,44 +1548,6 @@ function simulateAuth(type, email, password, name = '') {
     }, 1500);
 }
 
-// ===== Search Functionality =====
-if (searchInput) {
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            const searchTerm = searchInput.value.trim();
-            if (searchTerm) {
-                performSearch(searchTerm);
-            }
-        }
-    });
-    
-    const searchIcon = document.querySelector('.search-box i');
-    if (searchIcon) {
-        searchIcon.addEventListener('click', () => {
-            const searchTerm = searchInput.value.trim();
-            if (searchTerm) {
-                performSearch(searchTerm);
-            }
-        });
-    }
-}
-
-function performSearch(searchTerm) {
-    const searchTerms = [
-        'logo', 'flyer', 'business card', 'social media', 'poster', 'calendar',
-        'mockup', 'brand identity', 'print design', 'digital design',
-        'packaging', 'ui/ux', 'motion graphics', 'graphic design', 'template'
-    ];
-    
-    if (searchTerms.some(term => searchTerm.toLowerCase().includes(term))) {
-        alert(`Searching for: "${searchTerm}"\n\nThis would show relevant templates in a real implementation.`);
-        searchInput.value = '';
-    } else {
-        alert(`No templates found for "${searchTerm}". Try searching for: logo, flyer, business card, social media, etc.`);
-    }
-} 
-
-// ===== Newsletter Subscription =====
 if (newsletterForm) {
     newsletterForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -889,7 +1567,6 @@ if (newsletterForm) {
     });
 }
 
-// ===== Back to Top Button =====
 if (backToTop) {
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
@@ -912,14 +1589,10 @@ if (backToTop) {
 
     backToTop.addEventListener('click', (e) => {
         e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
 
-// ===== Desktop dropdown functionality =====
 const desktopDropdowns = document.querySelectorAll('.nav-links > li.dropdown');
 desktopDropdowns.forEach(dropdown => {
     dropdown.addEventListener('mouseenter', () => {
@@ -941,7 +1614,6 @@ desktopDropdowns.forEach(dropdown => {
     });
 });
 
-// ===== Smooth scrolling for anchor links =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -950,10 +1622,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(href);
         if (target) {
             e.preventDefault();
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             
             if (mobileNav && mobileNav.classList.contains('active')) {
                 mobileNav.classList.remove('active');
@@ -964,8 +1633,71 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== Handle window resize for starfield =====
-window.addEventListener('resize', () => {
-    // The StarfieldAnimation class already handles resize
-    // This is just for any additional resize handling
+window.addEventListener('resize', () => {});
+
+// ===== DOMContentLoaded initialization =====
+document.addEventListener('DOMContentLoaded', function() {
+    new StarfieldAnimation();
+    
+    if (currentYear) currentYear.textContent = new Date().getFullYear();
+    
+    loadTemplates();
+    loadServices();
+    loadPortfolio();
+    loadTools();
+    
+    if (window.AOS) {
+        AOS.init({ duration: 200, once: true });
+    }
+    
+    initializeSlider();
+    setupYouTubePopup();
+    
+    // New initializations
+    renderPopularGrid();
+    setupSearch();
+    
+    // Filter buttons
+    if (filterButtons.length) {
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.dataset.filter || 'all';
+                displayedCount = 8;
+                renderPopularGrid();
+            });
+        });
+    }
+    
+    // Load more button
+    if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+            displayedCount += 4;
+            renderPopularGrid();
+        });
+    }
+    
+    // Modal close button
+    if (modalCloseBtn) {
+        modalCloseBtn.addEventListener('click', closeTemplateModal);
+    }
+    
+    // Close modals when clicking overlay
+    if (overlay) {
+        overlay.addEventListener('click', function() {
+            closeTemplateModal();
+            if (searchModal) searchModal.classList.remove('active');
+        });
+    }
+    
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeTemplateModal();
+            if (searchModal) searchModal.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
 });
