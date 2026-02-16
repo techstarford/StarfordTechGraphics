@@ -988,7 +988,7 @@ let likedTemplates = JSON.parse(localStorage.getItem('likedTemplates')) || {};
 let favoritedTemplates = JSON.parse(localStorage.getItem('favoritedTemplates')) || {};
 let bookmarkedTemplates = JSON.parse(localStorage.getItem('bookmarkedTemplates')) || {};
 
-// ===== INJECT CUSTOM CSS FOR SMALLER SEARCH MODAL, SUGGESTIONS, AND BUTTON COLORS =====
+// ===== INJECT CUSTOM CSS FOR SMALLER SEARCH MODAL AND SUGGESTIONS =====
 function injectCustomStyles() {
     const style = document.createElement('style');
     style.textContent = `
@@ -1066,44 +1066,6 @@ function injectCustomStyles() {
         .suggestion-category {
             font-size: 0.8rem;
             color: var(--medium-gray);
-        }
-        /* Category link suggestion */
-        .suggestion-category-link {
-            font-weight: 600;
-            color: var(--primary);
-            text-decoration: underline;
-        }
-        /* Modal action buttons distinct colors */
-        .modal-actions .btn-primary {
-            background-color: #4361ee !important;
-            color: white !important;
-        }
-        .modal-actions .btn-secondary {
-            background-color: #f72585 !important;
-            color: white !important;
-        }
-        .modal-actions .btn-success {
-            background-color: #38b000 !important;
-            color: white !important;
-        }
-        .modal-actions .btn-primary:hover,
-        .modal-actions .btn-secondary:hover,
-        .modal-actions .btn-success:hover {
-            filter: brightness(0.9);
-            transform: translateY(-2px);
-        }
-        /* Floating button active states */
-        .action-btn.like.active {
-            background-color: #e74c3c !important;
-            color: white !important;
-        }
-        .action-btn.favorite.active {
-            background-color: #f39c12 !important;
-            color: white !important;
-        }
-        .action-btn.bookmark.active {
-            background-color: #9b59b6 !important;
-            color: white !important;
         }
     `;
     document.head.appendChild(style);
@@ -1310,22 +1272,17 @@ function openModal(design) {
         expandBtn.onclick = () => expandImage(design);
     }
 
-    // Bottom action buttons (with distinct colors)
+    // Bottom action buttons
     const previewBtn = document.getElementById('previewBtn');
-    if (previewBtn) {
-        previewBtn.classList.add('btn-primary');
-        previewBtn.onclick = () => expandImage(design);
-    }
+    if (previewBtn) previewBtn.onclick = () => expandImage(design);
 
     const customizeBtn = document.getElementById('customizeBtn');
     if (customizeBtn) {
-        customizeBtn.classList.add('btn-secondary');
         customizeBtn.onclick = () => alert('Customize Online feature coming soon!');
     }
 
     const downloadTemplateBtn = document.getElementById('downloadTemplateBtn');
     if (downloadTemplateBtn) {
-        downloadTemplateBtn.classList.add('btn-success');
         downloadTemplateBtn.onclick = () => {
             downloadTemplate(design);
             updateModalCounts(design);
@@ -1514,15 +1471,6 @@ function setupSearch() {
             if (term) performSearch(term);
         });
     }
-
-    // Close search modal when its close button is clicked
-    if (closeSearchModal) {
-        closeSearchModal.addEventListener('click', () => {
-            searchModal.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    }
 }
 
 function performSearch(term) {
@@ -1548,9 +1496,8 @@ function displaySearchResults(results, term) {
     if (stats) stats.textContent = `Found ${results.length} results for "${term}"`;
     
     if (grid) {
-        let html = '';
         if (results.length) {
-            html = results.map(r => `
+            grid.innerHTML = results.map(r => `
                 <div class="search-result-card" data-id="${r.id}">
                     <div class="search-result-img">
                         <img src="${r.image}" alt="${r.title}" loading="lazy">
@@ -1562,23 +1509,22 @@ function displaySearchResults(results, term) {
                     </div>
                 </div>
             `).join('');
-        } else {
-            html = '<div style="grid-column:1/-1; text-align:center; padding:50px;">No results found.</div>';
-        }
-        grid.innerHTML = html;
-        
-        document.querySelectorAll('.search-result-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const id = card.dataset.id;
-                const design = allTemplates.find(d => d.id === id);
-                if (design) {
-                    openModal(design);
-                    searchModal.classList.remove('active');
-                    if (overlay) overlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
+            
+            document.querySelectorAll('.search-result-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const id = card.dataset.id;
+                    const design = allTemplates.find(d => d.id === id);
+                    if (design) {
+                        openModal(design);
+                        searchModal.classList.remove('active');
+                        if (overlay) overlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
             });
-        });
+        } else {
+            grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:50px;">No results found.</div>';
+        }
     }
     
     searchModal.classList.add('active');
@@ -1600,58 +1546,30 @@ function setupLiveSearch() {
             return;
         }
         
-        // Get matching templates
-        const templateResults = allTemplates.filter(d =>
+        const results = allTemplates.filter(d =>
             d.title.toLowerCase().includes(term.toLowerCase()) ||
             d.description.toLowerCase().includes(term.toLowerCase()) ||
             (d.tags && d.tags.some(t => t.toLowerCase().includes(term.toLowerCase())))
         ).slice(0, 5);
         
-        // Also check if term matches a category (flyers, logos, etc.)
-        const categoryMap = {
-            flyers: { name: 'All Flyers', url: './templates/flyers/index.html' },
-            logos: { name: 'All Logos', url: './templates/logos/index.html' },
-            businesscards: { name: 'All Business Cards', url: './templates/business-cards/index.html' },
-            social: { name: 'All Social Media', url: './templates/social-media/index.html' },
-            posters: { name: 'All Posters', url: './templates/posters/index.html' },
-            calendars: { name: 'All Calendars', url: './templates/calendars/index.html' },
-            mockups: { name: 'All Mockups', url: './templates/mockups/index.html' }
-        };
-        const categoryLink = categoryMap[term.toLowerCase().replace(/\s+/g, '')];
-        
-        let suggestionsHtml = '';
-        if (categoryLink) {
-            suggestionsHtml += `
-                <div class="suggestion-item category-link" data-url="${categoryLink.url}">
-                    <div class="suggestion-info">
-                        <div class="suggestion-title suggestion-category-link">${categoryLink.name} →</div>
-                    </div>
-                </div>
-            `;
-        }
-        
-        if (templateResults.length) {
-            suggestionsHtml += templateResults.map(r => `
-                <div class="suggestion-item" data-id="${r.id}">
-                    <img src="${r.image}" alt="${r.title}" loading="lazy">
-                    <div class="suggestion-info">
-                        <div class="suggestion-title">${r.title}</div>
-                        <div class="suggestion-category">${r.category}</div>
-                    </div>
-                </div>
-            `).join('');
-        }
-        
-        if (!categoryLink && templateResults.length === 0) {
+        if (results.length === 0) {
             suggestionsDiv.classList.remove('active');
             return;
         }
         
-        suggestionsDiv.innerHTML = suggestionsHtml;
+        suggestionsDiv.innerHTML = results.map(r => `
+            <div class="suggestion-item" data-id="${r.id}">
+                <img src="${r.image}" alt="${r.title}" loading="lazy">
+                <div class="suggestion-info">
+                    <div class="suggestion-title">${r.title}</div>
+                    <div class="suggestion-category">${r.category}</div>
+                </div>
+            </div>
+        `).join('');
+        
         suggestionsDiv.classList.add('active');
         
-        // Template suggestions
-        document.querySelectorAll('.suggestion-item[data-id]').forEach(item => {
+        document.querySelectorAll('.suggestion-item').forEach(item => {
             item.addEventListener('click', () => {
                 const id = item.dataset.id;
                 const design = allTemplates.find(d => d.id === id);
@@ -1660,14 +1578,6 @@ function setupLiveSearch() {
                 searchInput.value = '';
             });
         });
-        
-        // Category link
-        const catLink = document.querySelector('.suggestion-item.category-link');
-        if (catLink) {
-            catLink.addEventListener('click', () => {
-                window.location.href = catLink.dataset.url;
-            });
-        }
     }, 300));
     
     document.addEventListener('click', (e) => {

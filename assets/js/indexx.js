@@ -112,7 +112,7 @@ class StarfieldAnimation {
     }
 }
 
-// ===== ORIGINAL DATA ARRAYS =====
+// ===== ORIGINAL DATA ARRAYS (for existing sections) =====
 const searchData = [
     { title: "Business Flyer", category: "Flyers", url: "./templates/flyers/business-flyers.html", tags: ["flyer", "business", "marketing"] },
     { title: "Logo Design", category: "Logos", url: "./templates/logos/index.html", tags: ["logo", "branding", "identity"] },
@@ -303,7 +303,7 @@ const toolsData = [
     { name: "Procreate", icon: "fas fa-paint-brush" }
 ];
 
-// ===== ENHANCED TEMPLATE DATABASE (with download URLs and extra counters) =====
+// ===== NEW COMPREHENSIVE TEMPLATE DATABASE (with placeholder images) =====
 const templateDatabase = {
     flyers: [
         {
@@ -315,15 +315,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 2345,
             downloads: 12890,
-            favorites: 567,
-            shares: 123,
-            bookmarks: 89,
             rating: 4.9,
             reviews: 456,
             badge: '🔥 Trending',
             image: '../../assets/images/flyers/new-week-flyer.jpg',
             fullImage: 'https://via.placeholder.com/1200x800/4361ee/ffffff?text=Business+Flyer+Full',
-            downloadUrl: './assets/downloads/business-flyer.zip',
             fileFormats: ['AI', 'EPS', 'PSD', 'PDF'],
             dimensions: '8.5" x 11" (US Letter)',
             software: ['Adobe Illustrator', 'Adobe Photoshop'],
@@ -353,15 +349,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 1876,
             downloads: 9450,
-            favorites: 432,
-            shares: 98,
-            bookmarks: 54,
             rating: 4.8,
             reviews: 324,
             badge: '🎉 Popular',
             image: '../../assets/images/flyers/Claire_001 Birthday flyer.jpg',
             fullImage: 'https://via.placeholder.com/1200x800/f72585/ffffff?text=Birthday+Full',
-            downloadUrl: './assets/downloads/birthday-flyer.zip',
             fileFormats: ['PSD', 'AI', 'PNG'],
             dimensions: '8.5" x 11"',
             software: ['Adobe Photoshop', 'Adobe Illustrator'],
@@ -391,15 +383,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 1567,
             downloads: 7890,
-            favorites: 345,
-            shares: 67,
-            bookmarks: 41,
             rating: 4.7,
             reviews: 278,
             badge: '🏠 Featured',
             image: '../../assets/images/photos/print-design-bg.jpg',
             fullImage: '../../assets/images/photos/print-design-bg.jpg',
-            downloadUrl: './assets/downloads/real-estate-flyer.zip',
             fileFormats: ['INDD', 'AI', 'PSD'],
             dimensions: '8.5" x 11"',
             software: ['Adobe InDesign', 'Adobe Illustrator'],
@@ -429,15 +417,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 2134,
             downloads: 11230,
-            favorites: 678,
-            shares: 156,
-            bookmarks: 92,
             rating: 4.9,
             reviews: 412,
             badge: '🎵 Hot',
             image: 'https://via.placeholder.com/600x400/ff3838/ffffff?text=Concert+Flyer',
             fullImage: 'https://via.placeholder.com/1200x800/ff3838/ffffff?text=Concert+Full',
-            downloadUrl: './assets/downloads/concert-flyer.zip',
             fileFormats: ['AI', 'PSD', 'EPS'],
             dimensions: '11" x 17" (Poster Size)',
             software: ['Adobe Illustrator', 'Adobe Photoshop'],
@@ -469,15 +453,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 3210,
             downloads: 15678,
-            favorites: 890,
-            shares: 234,
-            bookmarks: 123,
             rating: 4.9,
             reviews: 567,
             badge: '⭐ Bestseller',
             image: 'https://via.placeholder.com/600x400/2d4059/ffffff?text=Business+Logo',
             fullImage: 'https://via.placeholder.com/1200x800/2d4059/ffffff?text=Logo+Full',
-            downloadUrl: './assets/downloads/minimalist-logo.zip',
             fileFormats: ['AI', 'EPS', 'SVG', 'PNG'],
             dimensions: 'Vector (Scalable)',
             software: ['Adobe Illustrator', 'CorelDRAW'],
@@ -507,15 +487,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 2789,
             downloads: 12345,
-            favorites: 654,
-            shares: 189,
-            bookmarks: 97,
             rating: 4.8,
             reviews: 432,
             badge: '🎨 Creative',
             image: 'https://via.placeholder.com/600x400/8338ec/ffffff?text=Creative+Logo',
             fullImage: 'https://via.placeholder.com/1200x800/8338ec/ffffff?text=Creative+Full',
-            downloadUrl: './assets/downloads/creative-logo.zip',
             fileFormats: ['AI', 'EPS', 'SVG', 'PDF'],
             dimensions: 'Vector (Scalable)',
             software: ['Adobe Illustrator', 'CorelDRAW'],
@@ -545,15 +521,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 2345,
             downloads: 10987,
-            favorites: 543,
-            shares: 145,
-            bookmarks: 76,
             rating: 4.9,
             reviews: 389,
             badge: '👑 Premium',
             image: 'https://via.placeholder.com/600x400/bf9b30/ffffff?text=Luxury+Logo',
             fullImage: 'https://via.placeholder.com/1200x800/bf9b30/ffffff?text=Luxury+Full',
-            downloadUrl: './assets/downloads/luxury-logo.zip',
             fileFormats: ['AI', 'EPS', 'SVG', 'PNG'],
             dimensions: 'Vector (Scalable)',
             software: ['Adobe Illustrator', 'Adobe Photoshop'],
@@ -583,15 +555,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 2987,
             downloads: 13456,
-            favorites: 765,
-            shares: 201,
-            bookmarks: 112,
             rating: 4.8,
             reviews: 456,
             badge: '💻 Tech',
             image: 'https://via.placeholder.com/600x400/4361ee/ffffff?text=Tech+Logo',
             fullImage: 'https://via.placeholder.com/1200x800/4361ee/ffffff?text=Tech+Full',
-            downloadUrl: './assets/downloads/tech-logo.zip',
             fileFormats: ['AI', 'EPS', 'SVG', 'FIG'],
             dimensions: 'Vector (Scalable)',
             software: ['Adobe Illustrator', 'Figma'],
@@ -623,15 +591,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 1987,
             downloads: 9876,
-            favorites: 432,
-            shares: 98,
-            bookmarks: 54,
             rating: 4.8,
             reviews: 345,
             badge: 'Popular',
             image: 'https://via.placeholder.com/600x400/2c3e50/ffffff?text=Business+Card',
             fullImage: 'https://via.placeholder.com/1200x800/2c3e50/ffffff?text=Card+Full',
-            downloadUrl: './assets/downloads/modern-business-card.zip',
             fileFormats: ['AI', 'PSD', 'PDF', 'PNG'],
             dimensions: '3.5" x 2" (Standard)',
             software: ['Adobe Illustrator', 'Adobe Photoshop'],
@@ -661,15 +625,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 1654,
             downloads: 7654,
-            favorites: 321,
-            shares: 76,
-            bookmarks: 43,
             rating: 4.7,
             reviews: 234,
             badge: 'Trending',
             image: 'https://via.placeholder.com/600x400/ff6b6b/ffffff?text=Creative+Card',
             fullImage: 'https://via.placeholder.com/1200x800/ff6b6b/ffffff?text=Creative+Full',
-            downloadUrl: './assets/downloads/creative-card.zip',
             fileFormats: ['AI', 'PSD', 'PDF'],
             dimensions: '3.5" x 2"',
             software: ['Adobe Illustrator', 'Adobe Photoshop'],
@@ -699,15 +659,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 1432,
             downloads: 6543,
-            favorites: 298,
-            shares: 65,
-            bookmarks: 37,
             rating: 4.9,
             reviews: 198,
             badge: 'Premium',
             image: 'https://via.placeholder.com/600x400/d4af37/000000?text=Gold+Card',
             fullImage: 'https://via.placeholder.com/1200x800/d4af37/000000?text=Gold+Full',
-            downloadUrl: './assets/downloads/luxury-card.zip',
             fileFormats: ['AI', 'EPS', 'PDF'],
             dimensions: '3.5" x 2"',
             software: ['Adobe Illustrator'],
@@ -737,15 +693,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 1765,
             downloads: 8765,
-            favorites: 387,
-            shares: 87,
-            bookmarks: 49,
             rating: 4.8,
             reviews: 267,
             badge: 'Popular',
             image: 'https://via.placeholder.com/600x400/1a1a2e/ffffff?text=Tech+Card',
             fullImage: 'https://via.placeholder.com/1200x800/1a1a2e/ffffff?text=Tech+Full',
-            downloadUrl: './assets/downloads/tech-card.zip',
             fileFormats: ['AI', 'FIG', 'SVG', 'PDF'],
             dimensions: '3.5" x 2"',
             software: ['Adobe Illustrator', 'Figma'],
@@ -777,15 +729,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 4567,
             downloads: 23456,
-            favorites: 1234,
-            shares: 456,
-            bookmarks: 234,
             rating: 4.9,
             reviews: 678,
             badge: 'Bestseller',
             image: 'https://via.placeholder.com/600x400/833ab4/ffffff?text=Instagram+Stories',
             fullImage: 'https://via.placeholder.com/1200x800/833ab4/ffffff?text=Stories+Full',
-            downloadUrl: './assets/downloads/instagram-stories.zip',
             fileFormats: ['PSD', 'FIG', 'PNG', 'MP4'],
             dimensions: '1080 x 1920 px',
             software: ['Adobe Photoshop', 'Figma', 'Canva'],
@@ -816,15 +764,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 3456,
             downloads: 15678,
-            favorites: 876,
-            shares: 321,
-            bookmarks: 167,
             rating: 4.8,
             reviews: 456,
             badge: 'Popular',
             image: 'https://via.placeholder.com/600x400/1877f2/ffffff?text=Facebook+Covers',
             fullImage: 'https://via.placeholder.com/1200x800/1877f2/ffffff?text=Covers+Full',
-            downloadUrl: './assets/downloads/facebook-covers.zip',
             fileFormats: ['PSD', 'AI', 'JPG', 'PNG'],
             dimensions: '851 x 315 px',
             software: ['Adobe Photoshop', 'Adobe Illustrator'],
@@ -857,15 +801,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 3456,
             downloads: 16789,
-            favorites: 987,
-            shares: 345,
-            bookmarks: 189,
             rating: 4.8,
             reviews: 567,
             badge: 'Popular',
             image: 'https://via.placeholder.com/600x400/8b0000/ffffff?text=Movie+Poster',
             fullImage: 'https://via.placeholder.com/1200x800/8b0000/ffffff?text=Poster+Full',
-            downloadUrl: './assets/downloads/movie-poster.zip',
             fileFormats: ['PSD', 'AI', 'PDF'],
             dimensions: '27" x 40" (Standard Movie)',
             software: ['Adobe Photoshop', 'Adobe Illustrator'],
@@ -898,15 +838,11 @@ const templateDatabase = {
             price: 'Free',
             likes: 3456,
             downloads: 17890,
-            favorites: 1023,
-            shares: 412,
-            bookmarks: 234,
             rating: 4.9,
             reviews: 567,
             badge: 'New',
             image: 'https://via.placeholder.com/600x400/4361ee/ffffff?text=2026+Calendar',
             fullImage: 'https://via.placeholder.com/1200x800/4361ee/ffffff?text=Calendar+Full',
-            downloadUrl: './assets/downloads/2026-calendar.zip',
             fileFormats: ['INDD', 'AI', 'PDF', 'PSD'],
             dimensions: '12" x 12" (Closed)',
             software: ['Adobe InDesign', 'Adobe Illustrator'],
@@ -976,159 +912,65 @@ const viewChannelBtn = document.getElementById('viewChannelBtn');
 const popularGrid = document.getElementById('popularGrid');
 const filterButtons = document.querySelectorAll('.filter-popular-btn');
 const loadMoreBtn = document.getElementById('loadMorePopularBtn');
-const templateModal = document.getElementById('templateModal');
-const modalCloseBtn = document.getElementById('closeModal');
-const searchModal = document.getElementById('searchModal');
-const closeSearchModal = document.getElementById('closeSearchModal');
+const templateModal = document.getElementById('templateModal'); // Ensure this ID exists in HTML
+const modalCloseBtn = document.getElementById('closeModal'); // Ensure this ID exists
+const searchModal = document.getElementById('searchModal'); // Ensure this ID exists
+const closeSearchModal = document.getElementById('closeSearchModal'); // Ensure this ID exists
 
 // State
 let displayedCount = 8;
 let currentFilter = 'all';
 let likedTemplates = JSON.parse(localStorage.getItem('likedTemplates')) || {};
-let favoritedTemplates = JSON.parse(localStorage.getItem('favoritedTemplates')) || {};
-let bookmarkedTemplates = JSON.parse(localStorage.getItem('bookmarkedTemplates')) || {};
 
-// ===== INJECT CUSTOM CSS FOR SMALLER SEARCH MODAL, SUGGESTIONS, AND BUTTON COLORS =====
-function injectCustomStyles() {
-    const style = document.createElement('style');
-    style.textContent = `
-        /* Smaller search modal */
-        .search-modal-content {
-            max-width: 900px !important;
+// ===== NEW FUNCTIONS =====
+function renderPopularGrid() {
+    if (!popularGrid) {
+        console.warn('Popular grid not found');
+        return;
+    }
+    const filtered = filterDesigns(popularDesigns, currentFilter);
+    const toShow = filtered.slice(0, displayedCount);
+    
+    if (toShow.length === 0) {
+        popularGrid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:50px;">No designs in this category.</div>';
+        return;
+    }
+    
+    popularGrid.innerHTML = toShow.map(design => createCardHTML(design)).join('');
+    
+    // Attach click listeners to cards
+    document.querySelectorAll('.popular-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('.popular-likes i')) return;
+            const id = card.dataset.id;
+            const design = popularDesigns.find(d => d.id === id) || allTemplates.find(d => d.id === id);
+            if (design) {
+                openModal(design);
+            } else {
+                console.error('Design not found for id:', id);
+            }
+        });
+    });
+    
+    // Like button listeners
+    document.querySelectorAll('.popular-likes i').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const card = btn.closest('.popular-card');
+            const id = card.dataset.id;
+            toggleLike(id, btn);
+        });
+        const id = btn.closest('.popular-card').dataset.id;
+        if (likedTemplates[id]) {
+            btn.classList.add('active', 'fas');
+            btn.classList.remove('far');
         }
-        .search-results-grid {
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
-            gap: 15px !important;
-        }
-        .search-result-card {
-            max-width: 100%;
-        }
-        .search-result-img {
-            height: 140px !important;
-        }
-        .search-result-info {
-            padding: 12px !important;
-        }
-        .search-result-info h4 {
-            font-size: 1rem !important;
-        }
-        .search-result-info p {
-            font-size: 0.8rem !important;
-            margin-bottom: 5px !important;
-        }
-        .search-result-category {
-            font-size: 0.7rem !important;
-            padding: 3px 8px !important;
-        }
-        /* Live suggestions dropdown */
-        .search-suggestions {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: white;
-            border: 1px solid var(--light-gray);
-            border-radius: 8px;
-            box-shadow: var(--box-shadow);
-            z-index: 1000;
-            max-height: 300px;
-            overflow-y: auto;
-            display: none;
-        }
-        .search-suggestions.active {
-            display: block;
-        }
-        .suggestion-item {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            cursor: pointer;
-            border-bottom: 1px solid #f0f0f0;
-            transition: background 0.2s;
-        }
-        .suggestion-item:hover {
-            background: #f5f5f5;
-        }
-        .suggestion-item img {
-            width: 40px;
-            height: 40px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-        .suggestion-info {
-            flex: 1;
-        }
-        .suggestion-title {
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-        .suggestion-category {
-            font-size: 0.8rem;
-            color: var(--medium-gray);
-        }
-        /* Category link suggestion */
-        .suggestion-category-link {
-            font-weight: 600;
-            color: var(--primary);
-            text-decoration: underline;
-        }
-        /* Modal action buttons distinct colors */
-        .modal-actions .btn-primary {
-            background-color: #4361ee !important;
-            color: white !important;
-        }
-        .modal-actions .btn-secondary {
-            background-color: #f72585 !important;
-            color: white !important;
-        }
-        .modal-actions .btn-success {
-            background-color: #38b000 !important;
-            color: white !important;
-        }
-        .modal-actions .btn-primary:hover,
-        .modal-actions .btn-secondary:hover,
-        .modal-actions .btn-success:hover {
-            filter: brightness(0.9);
-            transform: translateY(-2px);
-        }
-        /* Floating button active states */
-        .action-btn.like.active {
-            background-color: #e74c3c !important;
-            color: white !important;
-        }
-        .action-btn.favorite.active {
-            background-color: #f39c12 !important;
-            color: white !important;
-        }
-        .action-btn.bookmark.active {
-            background-color: #9b59b6 !important;
-            color: white !important;
-        }
-    `;
-    document.head.appendChild(style);
-}
-injectCustomStyles();
-
-// ===== UTILITY FUNCTIONS =====
-function formatNumber(num) {
-    if (num >= 1000000) return (num/1000000).toFixed(1)+'M';
-    if (num >= 1000) return (num/1000).toFixed(1)+'K';
-    return num.toString();
-}
-
-function debounce(func, wait) {
-    let timeout;
-    return function(...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), wait);
-    };
-}
-
-// ===== POPULAR GRID FUNCTIONS =====
-function filterDesigns(arr, filter) {
-    if (filter === 'all') return arr;
-    return arr.filter(d => d.category === filter);
+    });
+    
+    // Load more button visibility
+    if (loadMoreBtn) {
+        loadMoreBtn.style.display = displayedCount >= filtered.length ? 'none' : 'inline-flex';
+    }
 }
 
 function createCardHTML(d) {
@@ -1154,56 +996,22 @@ function createCardHTML(d) {
     `;
 }
 
-function renderPopularGrid() {
-    if (!popularGrid) return;
-    const filtered = filterDesigns(popularDesigns, currentFilter);
-    const toShow = filtered.slice(0, displayedCount);
-    
-    if (toShow.length === 0) {
-        popularGrid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:50px;">No designs in this category.</div>';
-        return;
-    }
-    
-    popularGrid.innerHTML = toShow.map(design => createCardHTML(design)).join('');
-    
-    // Attach click listeners to cards
-    document.querySelectorAll('.popular-card').forEach(card => {
-        card.addEventListener('click', (e) => {
-            if (e.target.closest('.popular-likes i')) return;
-            const id = card.dataset.id;
-            const design = popularDesigns.find(d => d.id === id) || allTemplates.find(d => d.id === id);
-            if (design) openModal(design);
-        });
-    });
-    
-    // Like button listeners
-    document.querySelectorAll('.popular-likes i').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const card = btn.closest('.popular-card');
-            const id = card.dataset.id;
-            toggleLike(id, btn);
-        });
-        const id = btn.closest('.popular-card').dataset.id;
-        if (likedTemplates[id]) {
-            btn.classList.add('active', 'fas');
-            btn.classList.remove('far');
-        }
-    });
-    
-    // Load more button visibility
-    if (loadMoreBtn) {
-        loadMoreBtn.style.display = displayedCount >= filtered.length ? 'none' : 'inline-flex';
-    }
+function filterDesigns(arr, filter) {
+    if (filter === 'all') return arr;
+    return arr.filter(d => d.category === filter);
 }
 
-// ===== MODAL FUNCTIONS =====
 function openModal(design) {
-    if (!templateModal) return;
+    if (!templateModal) {
+        console.error('Modal element not found. Make sure #templateModal exists in HTML.');
+        return;
+    }
 
+    // Helper to safely set element properties
     const setElem = (id, prop, val) => {
         const el = document.getElementById(id);
         if (el) el[prop] = val;
+        else console.warn(`Element #${id} not found in modal`);
     };
 
     setElem('modalImage', 'src', design.image);
@@ -1249,86 +1057,16 @@ function openModal(design) {
         featuresList.innerHTML = design.features.map(f => `<li>${f}</li>`).join('');
     }
 
-    // Floating action buttons
-    const likeBtn = document.getElementById('modalLikeBtn');
-    const likeCount = document.getElementById('modalLikeCount');
-    if (likeBtn && likeCount) {
+    // Like button in modal
+    const modalLikeBtn = document.getElementById('modalLikeBtn');
+    const modalLikeCount = document.getElementById('modalLikeCount');
+    if (modalLikeBtn && modalLikeCount) {
         const isLiked = likedTemplates[design.id];
-        likeBtn.innerHTML = `<i class="${isLiked ? 'fas' : 'far'} fa-heart"></i>`;
-        likeCount.textContent = formatNumber(design.likes);
-        likeBtn.onclick = () => {
-            toggleLike(design.id, likeBtn.querySelector('i'));
-            likeCount.textContent = formatNumber(design.likes);
-            updateCardCounts(design);
-        };
-    }
-
-    const downloadBtn = document.getElementById('modalDownloadBtn');
-    if (downloadBtn) {
-        downloadBtn.onclick = () => {
-            downloadTemplate(design);
-            updateModalCounts(design);
-        };
-    }
-
-    const favoriteBtn = document.getElementById('modalFavoriteBtn');
-    const favCount = document.getElementById('modalFavoriteCount');
-    if (favoriteBtn && favCount) {
-        const isFav = favoritedTemplates[design.id];
-        favoriteBtn.innerHTML = `<i class="${isFav ? 'fas' : 'far'} fa-star"></i>`;
-        favCount.textContent = formatNumber(design.favorites || 0);
-        favoriteBtn.onclick = () => {
-            toggleFavorite(design.id, favoriteBtn.querySelector('i'));
-            favCount.textContent = formatNumber(design.favorites || 0);
-        };
-    }
-
-    const shareBtn = document.getElementById('modalShareBtn');
-    const shareCount = document.getElementById('modalShareCount');
-    if (shareBtn && shareCount) {
-        shareCount.textContent = formatNumber(design.shares || 0);
-        shareBtn.onclick = () => {
-            shareTemplate(design);
-            shareCount.textContent = formatNumber(design.shares || 0);
-        };
-    }
-
-    const bookmarkBtn = document.getElementById('modalBookmarkBtn');
-    const bookmarkCount = document.getElementById('modalBookmarkCount');
-    if (bookmarkBtn && bookmarkCount) {
-        const isBookmarked = bookmarkedTemplates[design.id];
-        bookmarkBtn.innerHTML = `<i class="${isBookmarked ? 'fas' : 'far'} fa-bookmark"></i>`;
-        bookmarkCount.textContent = formatNumber(design.bookmarks || 0);
-        bookmarkBtn.onclick = () => {
-            toggleBookmark(design.id, bookmarkBtn.querySelector('i'));
-            bookmarkCount.textContent = formatNumber(design.bookmarks || 0);
-        };
-    }
-
-    const expandBtn = document.getElementById('modalExpandBtn');
-    if (expandBtn) {
-        expandBtn.onclick = () => expandImage(design);
-    }
-
-    // Bottom action buttons (with distinct colors)
-    const previewBtn = document.getElementById('previewBtn');
-    if (previewBtn) {
-        previewBtn.classList.add('btn-primary');
-        previewBtn.onclick = () => expandImage(design);
-    }
-
-    const customizeBtn = document.getElementById('customizeBtn');
-    if (customizeBtn) {
-        customizeBtn.classList.add('btn-secondary');
-        customizeBtn.onclick = () => alert('Customize Online feature coming soon!');
-    }
-
-    const downloadTemplateBtn = document.getElementById('downloadTemplateBtn');
-    if (downloadTemplateBtn) {
-        downloadTemplateBtn.classList.add('btn-success');
-        downloadTemplateBtn.onclick = () => {
-            downloadTemplate(design);
-            updateModalCounts(design);
+        modalLikeBtn.innerHTML = `<i class="${isLiked ? 'fas' : 'far'} fa-heart"></i>`;
+        modalLikeCount.textContent = formatNumber(design.likes);
+        modalLikeBtn.onclick = () => {
+            toggleLike(design.id, modalLikeBtn.querySelector('i'));
+            modalLikeCount.textContent = formatNumber(design.likes);
         };
     }
 
@@ -1347,10 +1085,7 @@ function openModal(design) {
                 el.addEventListener('click', () => {
                     const id = el.dataset.id;
                     const relatedDesign = allTemplates.find(t => t.id === id);
-                    if (relatedDesign) {
-                        openModal(relatedDesign);
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
+                    if (relatedDesign) openModal(relatedDesign);
                 });
             });
         } else {
@@ -1359,6 +1094,7 @@ function openModal(design) {
         }
     }
 
+    // Show modal
     templateModal.classList.add('active');
     if (overlay) overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -1370,7 +1106,6 @@ function closeTemplateModal() {
     document.body.style.overflow = '';
 }
 
-// ===== INTERACTION FUNCTIONS =====
 function toggleLike(id, iconEl) {
     if (likedTemplates[id]) {
         delete likedTemplates[id];
@@ -1387,118 +1122,29 @@ function toggleLike(id, iconEl) {
     if (design) {
         if (likedTemplates[id]) design.likes += 1;
         else design.likes -= 1;
-        updateModalCounts(design);
-    }
-}
-
-function toggleFavorite(id, iconEl) {
-    if (favoritedTemplates[id]) {
-        delete favoritedTemplates[id];
-        iconEl.classList.remove('active', 'fas');
-        iconEl.classList.add('far');
-    } else {
-        favoritedTemplates[id] = true;
-        iconEl.classList.add('active', 'fas');
-        iconEl.classList.remove('far');
-    }
-    localStorage.setItem('favoritedTemplates', JSON.stringify(favoritedTemplates));
-    
-    const design = allTemplates.find(d => d.id === id) || popularDesigns.find(d => d.id === id);
-    if (design) {
-        if (favoritedTemplates[id]) design.favorites += 1;
-        else design.favorites -= 1;
-        updateModalCounts(design);
-    }
-}
-
-function toggleBookmark(id, iconEl) {
-    if (bookmarkedTemplates[id]) {
-        delete bookmarkedTemplates[id];
-        iconEl.classList.remove('active', 'fas');
-        iconEl.classList.add('far');
-    } else {
-        bookmarkedTemplates[id] = true;
-        iconEl.classList.add('active', 'fas');
-        iconEl.classList.remove('far');
-    }
-    localStorage.setItem('bookmarkedTemplates', JSON.stringify(bookmarkedTemplates));
-    
-    const design = allTemplates.find(d => d.id === id) || popularDesigns.find(d => d.id === id);
-    if (design) {
-        if (bookmarkedTemplates[id]) design.bookmarks += 1;
-        else design.bookmarks -= 1;
-        updateModalCounts(design);
-    }
-}
-
-function downloadTemplate(design) {
-    if (!design.downloadUrl) {
-        alert('Download URL not available for this template.');
-        return;
-    }
-    const link = document.createElement('a');
-    link.href = design.downloadUrl;
-    link.download = design.downloadUrl.split('/').pop();
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    
-    design.downloads += 1;
-    updateModalCounts(design);
-}
-
-function shareTemplate(design) {
-    const shareData = {
-        title: design.title,
-        text: design.description,
-        url: window.location.origin + '/template.html?id=' + design.id
-    };
-    if (navigator.share) {
-        navigator.share(shareData).catch(console.error);
-    } else {
-        navigator.clipboard.writeText(shareData.url).then(() => {
-            alert('Link copied to clipboard!');
-        }).catch(() => {
-            prompt('Copy this link:', shareData.url);
-        });
-    }
-    design.shares = (design.shares || 0) + 1;
-    updateModalCounts(design);
-}
-
-function expandImage(design) {
-    window.open(design.fullImage || design.image, '_blank');
-}
-
-function updateModalCounts(design) {
-    const likeCount = document.getElementById('modalLikeCount');
-    const downloadCount = document.getElementById('modalDownloadCount');
-    const favCount = document.getElementById('modalFavoriteCount');
-    const shareCount = document.getElementById('modalShareCount');
-    const bookmarkCount = document.getElementById('modalBookmarkCount');
-    
-    if (likeCount) likeCount.textContent = formatNumber(design.likes);
-    if (downloadCount) downloadCount.textContent = formatNumber(design.downloads);
-    if (favCount) favCount.textContent = formatNumber(design.favorites || 0);
-    if (shareCount) shareCount.textContent = formatNumber(design.shares || 0);
-    if (bookmarkCount) bookmarkCount.textContent = formatNumber(design.bookmarks || 0);
-}
-
-function updateCardCounts(design) {
-    const card = document.querySelector(`.popular-card[data-id="${design.id}"]`);
-    if (card) {
-        const likeSpan = card.querySelector('.popular-likes');
-        if (likeSpan) {
-            const icon = likeSpan.querySelector('i');
-            const countNode = likeSpan.childNodes[2];
-            if (countNode) countNode.textContent = ' ' + formatNumber(design.likes);
+        const card = document.querySelector(`.popular-card[data-id="${id}"]`);
+        if (card) {
+            const countSpan = card.querySelector('.popular-likes');
+            if (countSpan) {
+                const textNode = countSpan.childNodes[2];
+                if (textNode) textNode.textContent = ' ' + formatNumber(design.likes);
+            }
         }
     }
 }
 
-// ===== SEARCH FUNCTIONS =====
+function formatNumber(num) {
+    if (num >= 1000000) return (num/1000000).toFixed(1)+'M';
+    if (num >= 1000) return (num/1000).toFixed(1)+'K';
+    return num.toString();
+}
+
+// ===== SEARCH FUNCTIONALITY =====
 function setupSearch() {
-    if (!searchInput) return;
+    if (!searchInput) {
+        console.warn('Search input not found');
+        return;
+    }
     
     searchInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
@@ -1512,15 +1158,6 @@ function setupSearch() {
         searchIcon.addEventListener('click', () => {
             const term = searchInput.value.trim();
             if (term) performSearch(term);
-        });
-    }
-
-    // Close search modal when its close button is clicked
-    if (closeSearchModal) {
-        closeSearchModal.addEventListener('click', () => {
-            searchModal.classList.remove('active');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
         });
     }
 }
@@ -1548,9 +1185,8 @@ function displaySearchResults(results, term) {
     if (stats) stats.textContent = `Found ${results.length} results for "${term}"`;
     
     if (grid) {
-        let html = '';
         if (results.length) {
-            html = results.map(r => `
+            grid.innerHTML = results.map(r => `
                 <div class="search-result-card" data-id="${r.id}">
                     <div class="search-result-img">
                         <img src="${r.image}" alt="${r.title}" loading="lazy">
@@ -1562,23 +1198,23 @@ function displaySearchResults(results, term) {
                     </div>
                 </div>
             `).join('');
-        } else {
-            html = '<div style="grid-column:1/-1; text-align:center; padding:50px;">No results found.</div>';
-        }
-        grid.innerHTML = html;
-        
-        document.querySelectorAll('.search-result-card').forEach(card => {
-            card.addEventListener('click', () => {
-                const id = card.dataset.id;
-                const design = allTemplates.find(d => d.id === id);
-                if (design) {
-                    openModal(design);
-                    searchModal.classList.remove('active');
-                    if (overlay) overlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
+            
+            // Attach click handlers to search results
+            document.querySelectorAll('.search-result-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const id = card.dataset.id;
+                    const design = allTemplates.find(d => d.id === id);
+                    if (design) {
+                        openModal(design);
+                        searchModal.classList.remove('active');
+                        if (overlay) overlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                });
             });
-        });
+        } else {
+            grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:50px;">No results found.</div>';
+        }
     }
     
     searchModal.classList.add('active');
@@ -1586,98 +1222,7 @@ function displaySearchResults(results, term) {
     document.body.style.overflow = 'hidden';
 }
 
-function setupLiveSearch() {
-    if (!searchInput) return;
-    
-    const suggestionsDiv = document.createElement('div');
-    suggestionsDiv.className = 'search-suggestions';
-    searchInput.parentNode.appendChild(suggestionsDiv);
-    
-    searchInput.addEventListener('input', debounce(function() {
-        const term = this.value.trim();
-        if (term.length < 2) {
-            suggestionsDiv.classList.remove('active');
-            return;
-        }
-        
-        // Get matching templates
-        const templateResults = allTemplates.filter(d =>
-            d.title.toLowerCase().includes(term.toLowerCase()) ||
-            d.description.toLowerCase().includes(term.toLowerCase()) ||
-            (d.tags && d.tags.some(t => t.toLowerCase().includes(term.toLowerCase())))
-        ).slice(0, 5);
-        
-        // Also check if term matches a category (flyers, logos, etc.)
-        const categoryMap = {
-            flyers: { name: 'All Flyers', url: './templates/flyers/index.html' },
-            logos: { name: 'All Logos', url: './templates/logos/index.html' },
-            businesscards: { name: 'All Business Cards', url: './templates/business-cards/index.html' },
-            social: { name: 'All Social Media', url: './templates/social-media/index.html' },
-            posters: { name: 'All Posters', url: './templates/posters/index.html' },
-            calendars: { name: 'All Calendars', url: './templates/calendars/index.html' },
-            mockups: { name: 'All Mockups', url: './templates/mockups/index.html' }
-        };
-        const categoryLink = categoryMap[term.toLowerCase().replace(/\s+/g, '')];
-        
-        let suggestionsHtml = '';
-        if (categoryLink) {
-            suggestionsHtml += `
-                <div class="suggestion-item category-link" data-url="${categoryLink.url}">
-                    <div class="suggestion-info">
-                        <div class="suggestion-title suggestion-category-link">${categoryLink.name} →</div>
-                    </div>
-                </div>
-            `;
-        }
-        
-        if (templateResults.length) {
-            suggestionsHtml += templateResults.map(r => `
-                <div class="suggestion-item" data-id="${r.id}">
-                    <img src="${r.image}" alt="${r.title}" loading="lazy">
-                    <div class="suggestion-info">
-                        <div class="suggestion-title">${r.title}</div>
-                        <div class="suggestion-category">${r.category}</div>
-                    </div>
-                </div>
-            `).join('');
-        }
-        
-        if (!categoryLink && templateResults.length === 0) {
-            suggestionsDiv.classList.remove('active');
-            return;
-        }
-        
-        suggestionsDiv.innerHTML = suggestionsHtml;
-        suggestionsDiv.classList.add('active');
-        
-        // Template suggestions
-        document.querySelectorAll('.suggestion-item[data-id]').forEach(item => {
-            item.addEventListener('click', () => {
-                const id = item.dataset.id;
-                const design = allTemplates.find(d => d.id === id);
-                if (design) openModal(design);
-                suggestionsDiv.classList.remove('active');
-                searchInput.value = '';
-            });
-        });
-        
-        // Category link
-        const catLink = document.querySelector('.suggestion-item.category-link');
-        if (catLink) {
-            catLink.addEventListener('click', () => {
-                window.location.href = catLink.dataset.url;
-            });
-        }
-    }, 300));
-    
-    document.addEventListener('click', (e) => {
-        if (!searchInput.contains(e.target) && !suggestionsDiv.contains(e.target)) {
-            suggestionsDiv.classList.remove('active');
-        }
-    });
-}
-
-// ===== ORIGINAL FUNCTIONS (unchanged) =====
+// ===== ORIGINAL FUNCTIONS =====
 function loadTemplates() {
     const slider = document.querySelector('.featured-slider');
     if (!slider) return;
@@ -1817,7 +1362,7 @@ function hideYoutubePopup() {
     if (overlay) overlay.classList.remove('active');
 }
 
-// ===== ORIGINAL EVENT LISTENERS =====
+// ===== ORIGINAL EVENT LISTENERS (unchanged) =====
 if (mobileNavToggle.length > 0) {
     mobileNavToggle.forEach(toggle => {
         toggle.addEventListener('click', () => {
@@ -2111,7 +1656,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // New initializations
     renderPopularGrid();
     setupSearch();
-    setupLiveSearch();
     
     // Filter buttons
     if (filterButtons.length) {
