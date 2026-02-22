@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Blog | Starford Tech Graphics</title>
-    <meta name="description" content="Read the latest design tips, tutorials, and industry insights from the Starford Tech Graphics team.">
+    <title>Privacy Policy | Starford Tech Graphics</title>
+    <meta name="description" content="Our privacy policy explains how we collect, use, and protect your personal information when you use Starford Tech Graphics.">
 
-    <!-- Favicon (paths back to root) -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/starford-tech-box-icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/starford-tech-box-icon.png">
@@ -23,196 +23,86 @@
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Slick Slider (not heavily used but kept) -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-
-    <!-- Main Stylesheet (adjusted path) -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="../assets/css/index.css">
 
     <style>
-        /* Blog specific styles */
-        .blog-hero {
-            background: linear-gradient(135deg, #0a0a2a, #1a1a3a);
-            padding: 120px 0 80px;
+        /* Privacy page specific styles */
+        .privacy-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             color: white;
+            padding: 120px 0 60px;
             text-align: center;
         }
-        .blog-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+        .privacy-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
-        .blog-hero p {
-            font-size: 1.2rem;
+        .privacy-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
             max-width: 700px;
             margin: 0 auto;
-            opacity: 0.9;
         }
-        .blog-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            margin: 60px 0;
+        .privacy-content {
+            padding: 60px 0;
+            background: #f9f9f9;
         }
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        .blog-card {
-            background: var(--white);
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--box-shadow-sm);
-            transition: var(--transition);
-            border: 1px solid var(--light-gray);
-        }
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow-lg);
-            border-color: var(--primary-light);
-        }
-        .blog-card-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        .blog-card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .blog-card:hover .blog-card-img img {
-            transform: scale(1.05);
-        }
-        .blog-card-content {
-            padding: 25px;
-        }
-        .blog-meta {
-            display: flex;
-            gap: 15px;
-            font-size: 0.85rem;
-            color: var(--medium-gray);
-            margin-bottom: 10px;
-        }
-        .blog-meta i {
-            margin-right: 5px;
-            color: var(--primary);
-        }
-        .blog-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-        .blog-excerpt {
-            color: var(--dark-gray);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        .read-more {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary);
-            font-weight: 600;
-            transition: gap 0.3s;
-        }
-        .read-more:hover {
-            gap: 12px;
-        }
-        /* Sidebar */
-        .blog-sidebar {
-            position: sticky;
-            top: 100px;
-            align-self: start;
-        }
-        .sidebar-widget {
-            background: var(--white);
+        .privacy-card {
+            background: white;
             border-radius: var(--border-radius);
-            padding: 25px;
-            margin-bottom: 30px;
             box-shadow: var(--box-shadow-sm);
-            border: 1px solid var(--light-gray);
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        .sidebar-widget h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        .sidebar-widget h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--primary);
-        }
-        .category-list {
-            list-style: none;
-        }
-        .category-list li {
-            margin-bottom: 12px;
-        }
-        .category-list a {
-            display: flex;
-            justify-content: space-between;
-            color: var(--dark-gray);
-            transition: color 0.3s;
-        }
-        .category-list a:hover {
-            color: var(--primary);
-        }
-        .popular-post {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            align-items: center;
-        }
-        .popular-post img {
-            width: 70px;
-            height: 70px;
-            border-radius: var(--border-radius);
-            object-fit: cover;
-        }
-        .popular-post-info h4 {
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-        .popular-post-info .date {
-            font-size: 0.8rem;
-            color: var(--medium-gray);
-        }
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .tag {
-            background: var(--light);
-            padding: 8px 15px;
-            border-radius: var(--border-radius-full);
-            font-size: 0.85rem;
+        .privacy-card h2 {
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
             color: var(--dark);
-            transition: var(--transition);
         }
-        .tag:hover {
-            background: var(--primary);
-            color: white;
+        .privacy-card h2:first-of-type {
+            margin-top: 0;
         }
-        @media (max-width: 992px) {
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-            .blog-sidebar {
-                position: static;
-            }
+        .privacy-card h3 {
+            font-size: 1.3rem;
+            margin: 25px 0 10px;
+            color: var(--primary-dark);
+        }
+        .privacy-card p, .privacy-card li {
+            color: var(--dark-gray);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        .privacy-card ul, .privacy-card ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .privacy-card li {
+            margin-bottom: 8px;
+        }
+        .privacy-card a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        .privacy-card a:hover {
+            color: var(--primary-dark);
+        }
+        .privacy-card .last-updated {
+            font-style: italic;
+            color: var(--medium-gray);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        @media (max-width: 768px) {
+            .privacy-hero h1 { font-size: 2rem; }
+            .privacy-card { padding: 25px; }
         }
     </style>
 </head>
 <body>
-    <!-- Header (paths back to root: ../index.html, assets, etc.) -->
+    <!-- Header (same as root index) -->
     <header id="header">
         <div class="container header-container">
             <a href="../index.html" class="logo">
@@ -261,12 +151,12 @@
                         <ul class="dropdown-menu">
                             <li><a href="../resources/index.html"><i class="fas fa-video"></i> Tutorials</a></li>
                             <li><a href="../templates/index.html"><i class="fas fa-file-download"></i> Templates</a></li>
-                            <li><a href="../fonts.html"><i class="fas fa-font"></i> Fonts</a></li>
-                            <li><a href="../color-palettes.html"><i class="fas fa-palette"></i> Color Palettes</a></li>
-                            <li><a href="./index.html"><i class="fas fa-blog"></i> Design Blog</a></li>
+                            <li><a href="../resources/fonts.html"><i class="fas fa-font"></i> Fonts</a></li>
+                            <li><a href="../resources/color-palettes.html"><i class="fas fa-palette"></i> Color Palettes</a></li>
+                            <li><a href="../resources/blog/index.html"><i class="fas fa-blog"></i> Design Blog</a></li>
                         </ul>
                     </li>
-                    <li><a href="./index.html">Blog</a></li>
+                    <li><a href="../blog/index.html">Blog</a></li>
                     <li><a href="../about.html">About</a></li>
                     <li><a href="../contact.html">Contact</a></li>
                 </ul>
@@ -318,7 +208,7 @@
                     <li><a href="../templates/posters/index.html">Posters</a></li>
                     <li><a href="../templates/calendars/index.html">Calendars</a></li>
                     <li><a href="../templates/business-cards/index.html">Business Cards</a></li>
-                    <li><a href="../templates/social-media/index.html">Social Media</a></li>
+                    <li><a href="./templates/social-media/index.html">Social Media</a></li>
                 </ul>
             </li>
             <li>
@@ -330,10 +220,10 @@
                     <li><a href="../templates/index.html">Templates</a></li>
                     <li><a href="../fonts.html">Fonts</a></li>
                     <li><a href="../color-palettes.html">Color Palettes</a></li>
-                    <li><a href="./index.html">Design Blog</a></li>
+                    <li><a href="../blog/index.html">Design Blog</a></li>
                 </ul>
             </li>
-            <li><a href="./index.html">Blog</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
             <li><a href="../about.html">About</a></li>
             <li><a href="../contact.html">Contact</a></li>
             <li><a href="#" class="mobile-login-btn">Login</a></li>
@@ -374,7 +264,7 @@
                     <div class="form-group"><input type="password" placeholder="Password" required></div>
                     <div class="form-group"><input type="password" placeholder="Confirm Password" required></div>
                     <div class="form-group">
-                        <label class="terms"><input type="checkbox" required> I agree to the <a href="#">Terms</a> and <a href="#">Privacy</a></label>
+                        <label class="terms"><input type="checkbox" required> I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
                     </div>
                     <button type="submit" class="btn btn-block">Create Account</button>
                 </form>
@@ -384,62 +274,117 @@
 
     <div class="overlay" id="overlay"></div>
 
-    <!-- Blog Hero -->
-    <section class="blog-hero">
+    <!-- Privacy Hero -->
+    <section class="privacy-hero">
         <div class="container">
-            <h1>Design Blog & Insights</h1>
-            <p>Tips, tutorials, and industry news from the Starford Tech Graphics team. Stay inspired and level up your design skills.</p>
+            <h1>Privacy Policy</h1>
+            <p>How we collect, use, and protect your information</p>
         </div>
     </section>
 
-    <!-- Main Blog Content -->
-    <div class="container">
-        <div class="blog-grid">
-            <!-- Left side: posts grid -->
-            <div class="posts-grid" id="postsGrid">
-                <!-- Posts will be dynamically inserted by JavaScript -->
-            </div>
+    <!-- Privacy Content -->
+    <section class="privacy-content">
+        <div class="container">
+            <div class="privacy-card">
+                <p class="last-updated"><strong>Last Updated:</strong> February 22, 2026</p>
+                
+                <p>At Starford Tech Graphics, we respect your privacy and are committed to protecting your personal data. This privacy policy explains how we collect, use, and safeguard your information when you visit our website and use our services.</p>
 
-            <!-- Right sidebar -->
-            <aside class="blog-sidebar">
-                <div class="sidebar-widget">
-                    <h3>Categories</h3>
-                    <ul class="category-list" id="categoryList">
-                        <!-- populated by js -->
-                    </ul>
-                </div>
-                <div class="sidebar-widget">
-                    <h3>Popular Posts</h3>
-                    <div id="popularPosts">
-                        <!-- populated by js -->
-                    </div>
-                </div>
-                <div class="sidebar-widget">
-                    <h3>Tags</h3>
-                    <div class="tags" id="tagCloud">
-                        <!-- populated by js -->
-                    </div>
-                </div>
-                <div class="sidebar-widget">
-                    <h3>Follow Us</h3>
-                    <div class="social-links" style="justify-content: flex-start;">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </aside>
+                <h2>1. Information We Collect</h2>
+                <p>We may collect the following types of information:</p>
+                <ul>
+                    <li><strong>Personal Identification Information:</strong> Name, email address, phone number, and any other information you voluntarily provide when registering, subscribing to our newsletter, or contacting us.</li>
+                    <li><strong>Usage Data:</strong> Information about how you use our website, including your IP address, browser type, pages visited, time spent, and referring URLs.</li>
+                    <li><strong>Cookies and Tracking Technologies:</strong> We use cookies and similar technologies to enhance your experience, analyze trends, and administer the website.</li>
+                </ul>
+
+                <h2>2. How We Use Your Information</h2>
+                <p>We use the collected information for various purposes:</p>
+                <ul>
+                    <li>To provide and maintain our services</li>
+                    <li>To notify you about changes to our website or services</li>
+                    <li>To allow you to participate in interactive features</li>
+                    <li>To provide customer support</li>
+                    <li>To gather analysis or valuable information to improve our website</li>
+                    <li>To monitor the usage of our website</li>
+                    <li>To detect, prevent, and address technical issues</li>
+                    <li>To send you newsletters, marketing communications, and promotional materials (you may opt-out at any time)</li>
+                </ul>
+
+                <h2>3. Legal Basis for Processing (for EEA Users)</h2>
+                <p>If you are from the European Economic Area, our legal basis for collecting and using your personal information depends on the data and the context. We process your information:</p>
+                <ul>
+                    <li>With your consent (e.g., for marketing emails)</li>
+                    <li>To perform a contract with you (e.g., to provide templates you download)</li>
+                    <li>For our legitimate business interests (e.g., improving our website)</li>
+                    <li>To comply with legal obligations</li>
+                </ul>
+
+                <h2>4. Sharing Your Information</h2>
+                <p>We do not sell, trade, or rent your personal information to third parties. We may share aggregated, non-personal information with partners for analytics or marketing purposes. We may also share information with:</p>
+                <ul>
+                    <li><strong>Service Providers:</strong> Third-party vendors who help us operate our website, conduct our business, or serve you (e.g., hosting, email delivery, analytics). They are contractually obligated to keep your information confidential.</li>
+                    <li><strong>Legal Requirements:</strong> If required by law or in response to valid requests by public authorities.</li>
+                </ul>
+
+                <h2>5. Cookies and Tracking</h2>
+                <p>We use cookies and similar tracking technologies. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, you may not be able to use some portions of our website.</p>
+                <p>We use the following types of cookies:</p>
+                <ul>
+                    <li><strong>Essential Cookies:</strong> Necessary for the website to function.</li>
+                    <li><strong>Analytics/Performance Cookies:</strong> Allow us to recognize and count visitors and see how they move around our site.</li>
+                    <li><strong>Functionality Cookies:</strong> Recognize you when you return to our site.</li>
+                    <li><strong>Targeting Cookies:</strong> Record your visit to our site, pages visited, and links followed to make our site more relevant.</li>
+                </ul>
+
+                <h2>6. Data Security</h2>
+                <p>We implement appropriate technical and organizational measures to protect your personal data against accidental or unlawful destruction, loss, alteration, unauthorized disclosure or access. However, no method of transmission over the Internet or method of electronic storage is 100% secure.</p>
+
+                <h2>7. Data Retention</h2>
+                <p>We will retain your personal information only for as long as necessary for the purposes set out in this policy, unless a longer retention period is required or permitted by law. Usage data is generally retained for a shorter period, except when used to strengthen security or improve functionality.</p>
+
+                <h2>8. Your Data Protection Rights</h2>
+                <p>Depending on your location, you may have the following rights:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request copies of your personal data.</li>
+                    <li><strong>Rectification:</strong> Request correction of inaccurate data.</li>
+                    <li><strong>Erasure:</strong> Request deletion of your data under certain conditions.</li>
+                    <li><strong>Restrict Processing:</strong> Request restriction of processing.</li>
+                    <li><strong>Data Portability:</strong> Request transfer of your data to another organization.</li>
+                    <li><strong>Object:</strong> Object to our processing of your data (e.g., for direct marketing).</li>
+                    <li><strong>Withdraw Consent:</strong> Where we rely on consent, you have the right to withdraw it at any time.</li>
+                </ul>
+                <p>To exercise any of these rights, please contact us at <a href="mailto:privacy@starfordtech.com">privacy@starfordtech.com</a>.</p>
+
+                <h2>9. Third-Party Links</h2>
+                <p>Our website may contain links to other sites that are not operated by us. If you click a third-party link, you will be directed to that third party's site. We strongly advise you to review the privacy policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+
+                <h2>10. Children's Privacy</h2>
+                <p>Our website is not intended for children under the age of 13. We do not knowingly collect personal information from anyone under 13. If you are a parent or guardian and you are aware that your child has provided us with personal data, please contact us so we can take necessary actions.</p>
+
+                <h2>11. International Data Transfers</h2>
+                <p>Your information may be transferred to — and maintained on — computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ. If you are located outside Uganda and choose to provide information to us, please note that we transfer the data to Uganda and process it there. Your consent to this privacy policy followed by your submission of such information represents your agreement to that transfer.</p>
+
+                <h2>12. Changes to This Privacy Policy</h2>
+                <p>We may update our privacy policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last Updated" date. You are advised to review this privacy policy periodically for any changes.</p>
+
+                <h2>13. Contact Us</h2>
+                <p>If you have any questions about this privacy policy, please contact us:</p>
+                <ul>
+                    <li>By email: <a href="mailto:privacy@starfordtech.com">privacy@starfordtech.com</a></li>
+                    <li>By visiting our <a href="./contact.html">contact page</a></li>
+                    <li>By mail: 123 Design Ave, Creative District, Kampala, Uganda</li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- Newsletter -->
     <div class="container">
         <div class="newsletter" data-aos="">
             <div class="newsletter-content">
-                <h2>Never Miss a Post</h2>
-                <p>Subscribe to get weekly design tips, free resources, and blog updates.</p>
+                <h2>Stay Updated</h2>
+                <p>Subscribe to receive design tips, free resources, and policy updates.</p>
                 <form class="newsletter-form" id="newsletterForm">
                     <input type="email" placeholder="Enter your email" required>
                     <button type="submit">Subscribe</button>
@@ -448,7 +393,7 @@
         </div>
     </div>
 
-    <!-- Footer (paths to root) -->
+    <!-- Footer (same as root) -->
     <footer>
         <div class="footer-wave"></div>
         <div class="container">
@@ -464,7 +409,7 @@
                         <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://www.pinterest.com/starfordtech7/" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
                         <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -474,7 +419,7 @@
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="../templates/index.html">Templates</a></li>
                         <li><a href="../resources/index.html">Resources</a></li>
-                        <li><a href="./index.html">Blog</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
                         <li><a href="../about.html">About Us</a></li>
                         <li><a href="../contact.html">Contact</a></li>
                     </ul>
@@ -496,8 +441,8 @@
                         <li><a href="../resources/index.html">Tutorials</a></li>
                         <li><a href="../fonts.html">Free Fonts</a></li>
                         <li><a href="../color-palettes.html">Color Palettes</a></li>
-                        <li><a href="../templates/index.html">Free Templates</a></li>
-                        <li><a href="./index.html">Design Tips</a></li>
+                        <li><a href="../resources/templates/index.html">Free Templates</a></li>
+                        <li><a href="../resources/blog/index.html">Design Tips</a></li>
                         <li><a href="../faq.html">FAQ</a></li>
                     </ul>
                 </div>
@@ -512,7 +457,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Starford Tech Graphics. All rights reserved. | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Service</a></p>
+                <p>&copy; 2025 Starford Tech Graphics. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="../terms&Conditions/index.html">Terms of Service</a></p>
                 <p class="footer-note">All templates and resources are completely free to download and use.</p>
             </div>
         </div>
@@ -547,172 +492,12 @@
     <!-- Back to Top -->
     <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
 
-    <!-- JS Libraries -->
+    <!-- JavaScript Libraries -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <!-- Main JS (shared) -->
+    <!-- Main JavaScript -->
     <script src="../assets/js/wahara.js"></script>
-
-    <!-- Blog Data and Population Script -->
-    <script>
-        (function() {
-            // ----- Blog Post Data -----
-            const blogPosts = [
-                {
-                    id: 1,
-                    title: "10 Tips for Creating Stunning Business Flyers",
-                    excerpt: "Learn the essential design principles that make flyers stand out and drive engagement.",
-                    image: "../assets/images/blog/flyer-tips.jpg",
-                    date: "2025-02-15",
-                    author: "Sarah K.",
-                    category: "Design Tips",
-                    tags: ["flyers", "tips", "business"],
-                    featured: true,
-                    popular: true
-                },
-                {
-                    id: 2,
-                    title: "How to Choose the Right Color Palette for Your Brand",
-                    excerpt: "Color psychology and practical advice for selecting a palette that resonates.",
-                    image: "../assets/images/blog/color-palette.jpg",
-                    date: "2025-02-10",
-                    author: "James M.",
-                    category: "Branding",
-                    tags: ["color", "branding", "psychology"],
-                    featured: true,
-                    popular: true
-                },
-                {
-                    id: 3,
-                    title: "Mastering Logo Design: A Beginner's Guide",
-                    excerpt: "Step-by-step walkthrough of the logo design process from concept to final file.",
-                    image: "../assets/images/blog/logo-design.jpg",
-                    date: "2025-02-05",
-                    author: "Anna L.",
-                    category: "Tutorials",
-                    tags: ["logo", "design", "beginner"],
-                    featured: false,
-                    popular: true
-                },
-                {
-                    id: 4,
-                    title: "Top 5 Free Fonts for Modern Graphic Design",
-                    excerpt: "Our curated list of high-quality, free fonts that will elevate your projects.",
-                    image: "../assets/images/blog/free-fonts.jpg",
-                    date: "2025-01-28",
-                    author: "David R.",
-                    category: "Resources",
-                    tags: ["fonts", "free", "typography"],
-                    featured: false,
-                    popular: false
-                },
-                {
-                    id: 5,
-                    title: "Social Media Image Sizes Cheat Sheet (2025)",
-                    excerpt: "Never crop wrong again: updated dimensions for all major platforms.",
-                    image: "../assets/images/blog/social-sizes.jpg",
-                    date: "2025-01-20",
-                    author: "Lisa W.",
-                    category: "Social Media",
-                    tags: ["social media", "sizes", "cheatsheet"],
-                    featured: true,
-                    popular: true
-                },
-                {
-                    id: 6,
-                    title: "How to Create a Mockup That Wows Clients",
-                    excerpt: "Tips for presenting your designs in realistic mockups to impress.",
-                    image: "../assets/images/blog/mockup-tips.jpg",
-                    date: "2025-01-12",
-                    author: "Chris P.",
-                    category: "Tutorials",
-                    tags: ["mockups", "presentation", "client"],
-                    featured: false,
-                    popular: false
-                }
-            ];
-
-            // Helper to format date
-            function formatDate(dateStr) {
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                return new Date(dateStr).toLocaleDateString('en-US', options);
-            }
-
-            // Render posts grid
-            const postsGrid = document.getElementById('postsGrid');
-            if (postsGrid) {
-                let html = '';
-                blogPosts.forEach(post => {
-                    html += `
-                        <article class="blog-card">
-                            <div class="blog-card-img">
-                                <img src="${post.image}" alt="${post.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/600x400?text=Blog+Post'">
-                            </div>
-                            <div class="blog-card-content">
-                                <div class="blog-meta">
-                                    <span><i class="far fa-calendar-alt"></i> ${formatDate(post.date)}</span>
-                                    <span><i class="far fa-user"></i> ${post.author}</span>
-                                </div>
-                                <h3>${post.title}</h3>
-                                <p class="blog-excerpt">${post.excerpt}</p>
-                                <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    `;
-                });
-                postsGrid.innerHTML = html;
-            }
-
-            // Categories (unique from posts)
-            const categories = [...new Set(blogPosts.map(p => p.category))];
-            const categoryList = document.getElementById('categoryList');
-            if (categoryList) {
-                let catHtml = '';
-                categories.forEach(cat => {
-                    const count = blogPosts.filter(p => p.category === cat).length;
-                    catHtml += `<li><a href="#">${cat} <span>(${count})</span></a></li>`;
-                });
-                categoryList.innerHTML = catHtml;
-            }
-
-            // Popular posts (filter popular: true, take 3)
-            const popularPostsDiv = document.getElementById('popularPosts');
-            if (popularPostsDiv) {
-                const popular = blogPosts.filter(p => p.popular).slice(0, 3);
-                let popHtml = '';
-                popular.forEach(p => {
-                    popHtml += `
-                        <div class="popular-post">
-                            <img src="${p.image}" alt="${p.title}" onerror="this.src='https://via.placeholder.com/70'">
-                            <div class="popular-post-info">
-                                <h4><a href="#">${p.title}</a></h4>
-                                <div class="date"><i class="far fa-calendar-alt"></i> ${formatDate(p.date)}</div>
-                            </div>
-                        </div>
-                    `;
-                });
-                popularPostsDiv.innerHTML = popHtml;
-            }
-
-            // Tag cloud (all tags, maybe limit to 10)
-            const allTags = blogPosts.flatMap(p => p.tags);
-            const uniqueTags = [...new Set(allTags)].slice(0, 12);
-            const tagCloud = document.getElementById('tagCloud');
-            if (tagCloud) {
-                let tagHtml = '';
-                uniqueTags.forEach(tag => {
-                    tagHtml += `<a href="#" class="tag">${tag}</a>`;
-                });
-                tagCloud.innerHTML = tagHtml;
-            }
-
-            // AOS init
-            if (window.AOS) AOS.init({ duration: 200, once: true });
-
-            // YouTube popup (from wahara.js handles it)
-        })();
-    </script>
 </body>
 </html>

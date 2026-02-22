@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Blog | Starford Tech Graphics</title>
-    <meta name="description" content="Read the latest design tips, tutorials, and industry insights from the Starford Tech Graphics team.">
+    <title>Terms of Service | Starford Tech Graphics</title>
+    <meta name="description" content="Read our terms of service. By using Starford Tech Graphics, you agree to these terms and conditions.">
 
-    <!-- Favicon (paths back to root) -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/images/icons/starford-tech-box-icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/icons/starford-tech-box-icon.png">
@@ -23,200 +23,90 @@
     <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Slick Slider (not heavily used but kept) -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-
-    <!-- Main Stylesheet (adjusted path) -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="../assets/css/index.css">
 
     <style>
-        /* Blog specific styles */
-        .blog-hero {
-            background: linear-gradient(135deg, #0a0a2a, #1a1a3a);
-            padding: 120px 0 80px;
+        /* Terms page specific styles (same as privacy) */
+        .terms-hero {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             color: white;
+            padding: 120px 0 60px;
             text-align: center;
         }
-        .blog-hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+        .terms-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
-        .blog-hero p {
-            font-size: 1.2rem;
+        .terms-hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
             max-width: 700px;
             margin: 0 auto;
-            opacity: 0.9;
         }
-        .blog-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            margin: 60px 0;
+        .terms-content {
+            padding: 60px 0;
+            background: #f9f9f9;
         }
-        .posts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
-        }
-        .blog-card {
-            background: var(--white);
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            box-shadow: var(--box-shadow-sm);
-            transition: var(--transition);
-            border: 1px solid var(--light-gray);
-        }
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--box-shadow-lg);
-            border-color: var(--primary-light);
-        }
-        .blog-card-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        .blog-card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .blog-card:hover .blog-card-img img {
-            transform: scale(1.05);
-        }
-        .blog-card-content {
-            padding: 25px;
-        }
-        .blog-meta {
-            display: flex;
-            gap: 15px;
-            font-size: 0.85rem;
-            color: var(--medium-gray);
-            margin-bottom: 10px;
-        }
-        .blog-meta i {
-            margin-right: 5px;
-            color: var(--primary);
-        }
-        .blog-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-        .blog-excerpt {
-            color: var(--dark-gray);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        .read-more {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--primary);
-            font-weight: 600;
-            transition: gap 0.3s;
-        }
-        .read-more:hover {
-            gap: 12px;
-        }
-        /* Sidebar */
-        .blog-sidebar {
-            position: sticky;
-            top: 100px;
-            align-self: start;
-        }
-        .sidebar-widget {
-            background: var(--white);
+        .terms-card {
+            background: white;
             border-radius: var(--border-radius);
-            padding: 25px;
-            margin-bottom: 30px;
             box-shadow: var(--box-shadow-sm);
-            border: 1px solid var(--light-gray);
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
         }
-        .sidebar-widget h3 {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        .sidebar-widget h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--primary);
-        }
-        .category-list {
-            list-style: none;
-        }
-        .category-list li {
-            margin-bottom: 12px;
-        }
-        .category-list a {
-            display: flex;
-            justify-content: space-between;
-            color: var(--dark-gray);
-            transition: color 0.3s;
-        }
-        .category-list a:hover {
-            color: var(--primary);
-        }
-        .popular-post {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 20px;
-            align-items: center;
-        }
-        .popular-post img {
-            width: 70px;
-            height: 70px;
-            border-radius: var(--border-radius);
-            object-fit: cover;
-        }
-        .popular-post-info h4 {
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-        .popular-post-info .date {
-            font-size: 0.8rem;
-            color: var(--medium-gray);
-        }
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .tag {
-            background: var(--light);
-            padding: 8px 15px;
-            border-radius: var(--border-radius-full);
-            font-size: 0.85rem;
+        .terms-card h2 {
+            font-size: 1.8rem;
+            margin: 30px 0 15px;
             color: var(--dark);
-            transition: var(--transition);
         }
-        .tag:hover {
-            background: var(--primary);
-            color: white;
+        .terms-card h2:first-of-type {
+            margin-top: 0;
         }
-        @media (max-width: 992px) {
-            .blog-grid {
-                grid-template-columns: 1fr;
-            }
-            .blog-sidebar {
-                position: static;
-            }
+        .terms-card h3 {
+            font-size: 1.3rem;
+            margin: 25px 0 10px;
+            color: var(--primary-dark);
+        }
+        .terms-card p, .terms-card li {
+            color: var(--dark-gray);
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+        .terms-card ul, .terms-card ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        .terms-card li {
+            margin-bottom: 8px;
+        }
+        .terms-card a {
+            color: var(--primary);
+            text-decoration: underline;
+        }
+        .terms-card a:hover {
+            color: var(--primary-dark);
+        }
+        .terms-card .last-updated {
+            font-style: italic;
+            color: var(--medium-gray);
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        @media (max-width: 768px) {
+            .terms-hero h1 { font-size: 2rem; }
+            .terms-card { padding: 25px; }
         }
     </style>
 </head>
 <body>
-    <!-- Header (paths back to root: ../index.html, assets, etc.) -->
+    <!-- Header (same as root index) -->
     <header id="header">
         <div class="container header-container">
             <a href="../index.html" class="logo">
-                <img src="../assets/images/icons/starford.png" alt="Starford Tech Graphics Logo">
+                <img src="../assets/images/icons/starford.png" alt="Starford Tech Graphics Logo"> 
                 Starford<span>Tech</span>
             </a>
             <nav class="desktop-nav">
@@ -263,10 +153,10 @@
                             <li><a href="../templates/index.html"><i class="fas fa-file-download"></i> Templates</a></li>
                             <li><a href="../fonts.html"><i class="fas fa-font"></i> Fonts</a></li>
                             <li><a href="../color-palettes.html"><i class="fas fa-palette"></i> Color Palettes</a></li>
-                            <li><a href="./index.html"><i class="fas fa-blog"></i> Design Blog</a></li>
+                            <li><a href="../blog/index.html"><i class="fas fa-blog"></i> Design Blog</a></li>
                         </ul>
                     </li>
-                    <li><a href="./index.html">Blog</a></li>
+                    <li><a href="../blog/index.html">Blog</a></li>
                     <li><a href="../about.html">About</a></li>
                     <li><a href="../contact.html">Contact</a></li>
                 </ul>
@@ -330,10 +220,10 @@
                     <li><a href="../templates/index.html">Templates</a></li>
                     <li><a href="../fonts.html">Fonts</a></li>
                     <li><a href="../color-palettes.html">Color Palettes</a></li>
-                    <li><a href="./index.html">Design Blog</a></li>
+                    <li><a href="../blog/index.html">Design Blog</a></li>
                 </ul>
             </li>
-            <li><a href="./index.html">Blog</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
             <li><a href="../about.html">About</a></li>
             <li><a href="../contact.html">Contact</a></li>
             <li><a href="#" class="mobile-login-btn">Login</a></li>
@@ -374,7 +264,7 @@
                     <div class="form-group"><input type="password" placeholder="Password" required></div>
                     <div class="form-group"><input type="password" placeholder="Confirm Password" required></div>
                     <div class="form-group">
-                        <label class="terms"><input type="checkbox" required> I agree to the <a href="#">Terms</a> and <a href="#">Privacy</a></label>
+                        <label class="terms"><input type="checkbox" required> I agree to the <a href="../terms.html">Terms of Service</a> and <a href="./privacy.html">Privacy Policy</a></label>
                     </div>
                     <button type="submit" class="btn btn-block">Create Account</button>
                 </form>
@@ -384,62 +274,85 @@
 
     <div class="overlay" id="overlay"></div>
 
-    <!-- Blog Hero -->
-    <section class="blog-hero">
+    <!-- Terms Hero -->
+    <section class="terms-hero">
         <div class="container">
-            <h1>Design Blog & Insights</h1>
-            <p>Tips, tutorials, and industry news from the Starford Tech Graphics team. Stay inspired and level up your design skills.</p>
+            <h1>Terms of Service</h1>
+            <p>Please read these terms carefully before using our website</p>
         </div>
     </section>
 
-    <!-- Main Blog Content -->
-    <div class="container">
-        <div class="blog-grid">
-            <!-- Left side: posts grid -->
-            <div class="posts-grid" id="postsGrid">
-                <!-- Posts will be dynamically inserted by JavaScript -->
-            </div>
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="container">
+            <div class="terms-card">
+                <p class="last-updated"><strong>Last Updated:</strong> February 22, 2026</p>
+                
+                <h2>1. Acceptance of Terms</h2>
+                <p>By accessing or using the Starford Tech Graphics website ("the Site"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, please do not use the Site. We may modify these Terms at any time; changes will be effective upon posting. Your continued use of the Site constitutes acceptance of the modified Terms.</p>
 
-            <!-- Right sidebar -->
-            <aside class="blog-sidebar">
-                <div class="sidebar-widget">
-                    <h3>Categories</h3>
-                    <ul class="category-list" id="categoryList">
-                        <!-- populated by js -->
-                    </ul>
-                </div>
-                <div class="sidebar-widget">
-                    <h3>Popular Posts</h3>
-                    <div id="popularPosts">
-                        <!-- populated by js -->
-                    </div>
-                </div>
-                <div class="sidebar-widget">
-                    <h3>Tags</h3>
-                    <div class="tags" id="tagCloud">
-                        <!-- populated by js -->
-                    </div>
-                </div>
-                <div class="sidebar-widget">
-                    <h3>Follow Us</h3>
-                    <div class="social-links" style="justify-content: flex-start;">
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-            </aside>
+                <h2>2. Description of Service</h2>
+                <p>Starford Tech Graphics provides free graphic design templates, resources, and related content (the "Service"). The Service may include downloadable files (e.g., PSD, AI, EPS), blog articles, tutorials, and other materials. All templates and resources are offered "as is" and are free for personal and commercial use unless otherwise noted. However, you may not resell or redistribute the templates as your own work on stock websites.</p>
+
+                <h2>3. Intellectual Property Rights</h2>
+                <h3>3.1 Our Content</h3>
+                <p>The Site and its original content (excluding templates provided by third parties) are owned by Starford Tech Graphics and are protected by copyright, trademark, and other intellectual property laws. You may not copy, modify, distribute, sell, or lease any part of our Site or Service without our prior written consent.</p>
+                <h3>3.2 Templates and Resources</h3>
+                <p>All templates and resources available for download are the property of Starford Tech Graphics or its licensors. You are granted a non-exclusive, non-transferable, worldwide license to use, modify, and incorporate these templates into your own projects for personal or commercial purposes. You may not claim the templates as your own, redistribute them as standalone files, or sell them on template marketplaces.</p>
+
+                <h2>4. User Accounts</h2>
+                <p>To access certain features (e.g., saving favorites, downloading certain files), you may need to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities under your account. You agree to provide accurate and complete information. We reserve the right to suspend or terminate your account if we suspect any violation of these Terms.</p>
+
+                <h2>5. User Conduct</h2>
+                <p>You agree not to:</p>
+                <ul>
+                    <li>Use the Site in any way that violates applicable laws or regulations.</li>
+                    <li>Infringe upon the rights of others, including intellectual property rights.</li>
+                    <li>Upload or transmit viruses, malware, or any harmful code.</li>
+                    <li>Attempt to gain unauthorized access to our systems or user accounts.</li>
+                    <li>Interfere with the proper functioning of the Site.</li>
+                    <li>Use automated means (bots, scrapers) to access or collect data from the Site.</li>
+                    <li>Impersonate any person or entity.</li>
+                </ul>
+
+                <h2>6. Third-Party Links and Services</h2>
+                <p>The Site may contain links to third-party websites or services that are not owned or controlled by Starford Tech Graphics. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites. You acknowledge and agree that we shall not be liable for any damage or loss caused by or in connection with such third-party services.</p>
+
+                <h2>7. Termination</h2>
+                <p>We may terminate or suspend your access to the Site immediately, without prior notice or liability, for any reason, including if you breach these Terms. Upon termination, your right to use the Site will cease immediately. All provisions of these Terms which by their nature should survive termination shall survive, including ownership provisions, warranty disclaimers, indemnity, and limitations of liability.</p>
+
+                <h2>8. Disclaimer of Warranties</h2>
+                <p>THE SITE AND SERVICE ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMITTED BY LAW, STARFORD TECH GRAPHICS DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SITE WILL BE UNINTERRUPTED, ERROR-FREE, SECURE, OR FREE FROM VIRUSES OR OTHER HARMFUL COMPONENTS.</p>
+
+                <h2>9. Limitation of Liability</h2>
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL STARFORD TECH GRAPHICS, ITS DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, DATA, OR USE, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF THE SITE OR SERVICE, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), OR ANY OTHER LEGAL THEORY, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+                <h2>10. Indemnification</h2>
+                <p>You agree to indemnify, defend, and hold harmless Starford Tech Graphics, its affiliates, officers, directors, employees, and agents from and against any and all claims, damages, obligations, losses, liabilities, costs, or debt, and expenses (including but not limited to attorney's fees) arising from: (i) your use of and access to the Site; (ii) your violation of any term of these Terms; (iii) your violation of any third-party right, including without limitation any copyright, property, or privacy right; or (iv) any claim that your use of the Site caused damage to a third party.</p>
+
+                <h2>11. Governing Law</h2>
+                <p>These Terms shall be governed and construed in accordance with the laws of Uganda, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms will be brought exclusively in the courts located in Kampala, Uganda, and you hereby consent to the personal jurisdiction and venue thereof.</p>
+
+                <h2>12. Changes to Terms</h2>
+                <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will try to provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion. By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms.</p>
+
+                <h2>13. Contact Information</h2>
+                <p>If you have any questions about these Terms, please contact us:</p>
+                <ul>
+                    <li>By email: <a href="mailto:legal@starfordtech.com">legal@starfordtech.com</a></li>
+                    <li>By visiting our <a href="./contact.html">contact page</a></li>
+                    <li>By mail: 123 Design Ave, Creative District, Kampala, Uganda</li>
+                </ul>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- Newsletter -->
     <div class="container">
         <div class="newsletter" data-aos="">
             <div class="newsletter-content">
-                <h2>Never Miss a Post</h2>
-                <p>Subscribe to get weekly design tips, free resources, and blog updates.</p>
+                <h2>Stay Updated</h2>
+                <p>Subscribe to receive design tips, free resources, and policy updates.</p>
                 <form class="newsletter-form" id="newsletterForm">
                     <input type="email" placeholder="Enter your email" required>
                     <button type="submit">Subscribe</button>
@@ -448,7 +361,7 @@
         </div>
     </div>
 
-    <!-- Footer (paths to root) -->
+    <!-- Footer -->
     <footer>
         <div class="footer-wave"></div>
         <div class="container">
@@ -464,7 +377,7 @@
                         <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                        <a href="https://www.pinterest.com/starfordtech7/" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
                         <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
@@ -474,7 +387,7 @@
                         <li><a href="../index.html">Home</a></li>
                         <li><a href="../templates/index.html">Templates</a></li>
                         <li><a href="../resources/index.html">Resources</a></li>
-                        <li><a href="./index.html">Blog</a></li>
+                        <li><a href="../blog/index.html">Blog</a></li>
                         <li><a href="../about.html">About Us</a></li>
                         <li><a href="../contact.html">Contact</a></li>
                     </ul>
@@ -487,18 +400,18 @@
                         <li><a href="../templates/posters/index.html">Posters</a></li>
                         <li><a href="../templates/business-cards/index.html">Business Cards</a></li>
                         <li><a href="../templates/social-media/index.html">Social Media</a></li>
-                        <li><a href="../templates/mockups/index.html">Mockups</a></li>
+                        <li><a href="./templates/mockups/index.html">Mockups</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h3>Resources</h3>
                     <ul>
                         <li><a href="../resources/index.html">Tutorials</a></li>
-                        <li><a href="../fonts.html">Free Fonts</a></li>
-                        <li><a href="../color-palettes.html">Color Palettes</a></li>
-                        <li><a href="../templates/index.html">Free Templates</a></li>
-                        <li><a href="./index.html">Design Tips</a></li>
-                        <li><a href="../faq.html">FAQ</a></li>
+                        <li><a href="../resources/fonts.html">Free Fonts</a></li>
+                        <li><a href="../resources/color-palettes.html">Color Palettes</a></li>
+                        <li><a href="../resources/templates/index.html">Free Templates</a></li>
+                        <li><a href="../resources/blog/index.html">Design Tips</a></li>
+                        <li><a href="../resources/faq.html">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -512,7 +425,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Starford Tech Graphics. All rights reserved. | <a href="../privacy.html">Privacy Policy</a> | <a href="../terms.html">Terms of Service</a></p>
+                <p>&copy; 2025 Starford Tech Graphics. All rights reserved. | <a href="../privacy-policy/index.html">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
                 <p class="footer-note">All templates and resources are completely free to download and use.</p>
             </div>
         </div>
@@ -547,172 +460,12 @@
     <!-- Back to Top -->
     <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
 
-    <!-- JS Libraries -->
+    <!-- JavaScript Libraries -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-    <!-- Main JS (shared) -->
+    <!-- Main JavaScript -->
     <script src="../assets/js/wahara.js"></script>
-
-    <!-- Blog Data and Population Script -->
-    <script>
-        (function() {
-            // ----- Blog Post Data -----
-            const blogPosts = [
-                {
-                    id: 1,
-                    title: "10 Tips for Creating Stunning Business Flyers",
-                    excerpt: "Learn the essential design principles that make flyers stand out and drive engagement.",
-                    image: "../assets/images/blog/flyer-tips.jpg",
-                    date: "2025-02-15",
-                    author: "Sarah K.",
-                    category: "Design Tips",
-                    tags: ["flyers", "tips", "business"],
-                    featured: true,
-                    popular: true
-                },
-                {
-                    id: 2,
-                    title: "How to Choose the Right Color Palette for Your Brand",
-                    excerpt: "Color psychology and practical advice for selecting a palette that resonates.",
-                    image: "../assets/images/blog/color-palette.jpg",
-                    date: "2025-02-10",
-                    author: "James M.",
-                    category: "Branding",
-                    tags: ["color", "branding", "psychology"],
-                    featured: true,
-                    popular: true
-                },
-                {
-                    id: 3,
-                    title: "Mastering Logo Design: A Beginner's Guide",
-                    excerpt: "Step-by-step walkthrough of the logo design process from concept to final file.",
-                    image: "../assets/images/blog/logo-design.jpg",
-                    date: "2025-02-05",
-                    author: "Anna L.",
-                    category: "Tutorials",
-                    tags: ["logo", "design", "beginner"],
-                    featured: false,
-                    popular: true
-                },
-                {
-                    id: 4,
-                    title: "Top 5 Free Fonts for Modern Graphic Design",
-                    excerpt: "Our curated list of high-quality, free fonts that will elevate your projects.",
-                    image: "../assets/images/blog/free-fonts.jpg",
-                    date: "2025-01-28",
-                    author: "David R.",
-                    category: "Resources",
-                    tags: ["fonts", "free", "typography"],
-                    featured: false,
-                    popular: false
-                },
-                {
-                    id: 5,
-                    title: "Social Media Image Sizes Cheat Sheet (2025)",
-                    excerpt: "Never crop wrong again: updated dimensions for all major platforms.",
-                    image: "../assets/images/blog/social-sizes.jpg",
-                    date: "2025-01-20",
-                    author: "Lisa W.",
-                    category: "Social Media",
-                    tags: ["social media", "sizes", "cheatsheet"],
-                    featured: true,
-                    popular: true
-                },
-                {
-                    id: 6,
-                    title: "How to Create a Mockup That Wows Clients",
-                    excerpt: "Tips for presenting your designs in realistic mockups to impress.",
-                    image: "../assets/images/blog/mockup-tips.jpg",
-                    date: "2025-01-12",
-                    author: "Chris P.",
-                    category: "Tutorials",
-                    tags: ["mockups", "presentation", "client"],
-                    featured: false,
-                    popular: false
-                }
-            ];
-
-            // Helper to format date
-            function formatDate(dateStr) {
-                const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                return new Date(dateStr).toLocaleDateString('en-US', options);
-            }
-
-            // Render posts grid
-            const postsGrid = document.getElementById('postsGrid');
-            if (postsGrid) {
-                let html = '';
-                blogPosts.forEach(post => {
-                    html += `
-                        <article class="blog-card">
-                            <div class="blog-card-img">
-                                <img src="${post.image}" alt="${post.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/600x400?text=Blog+Post'">
-                            </div>
-                            <div class="blog-card-content">
-                                <div class="blog-meta">
-                                    <span><i class="far fa-calendar-alt"></i> ${formatDate(post.date)}</span>
-                                    <span><i class="far fa-user"></i> ${post.author}</span>
-                                </div>
-                                <h3>${post.title}</h3>
-                                <p class="blog-excerpt">${post.excerpt}</p>
-                                <a href="#" class="read-more">Read Article <i class="fas fa-arrow-right"></i></a>
-                            </div>
-                        </article>
-                    `;
-                });
-                postsGrid.innerHTML = html;
-            }
-
-            // Categories (unique from posts)
-            const categories = [...new Set(blogPosts.map(p => p.category))];
-            const categoryList = document.getElementById('categoryList');
-            if (categoryList) {
-                let catHtml = '';
-                categories.forEach(cat => {
-                    const count = blogPosts.filter(p => p.category === cat).length;
-                    catHtml += `<li><a href="#">${cat} <span>(${count})</span></a></li>`;
-                });
-                categoryList.innerHTML = catHtml;
-            }
-
-            // Popular posts (filter popular: true, take 3)
-            const popularPostsDiv = document.getElementById('popularPosts');
-            if (popularPostsDiv) {
-                const popular = blogPosts.filter(p => p.popular).slice(0, 3);
-                let popHtml = '';
-                popular.forEach(p => {
-                    popHtml += `
-                        <div class="popular-post">
-                            <img src="${p.image}" alt="${p.title}" onerror="this.src='https://via.placeholder.com/70'">
-                            <div class="popular-post-info">
-                                <h4><a href="#">${p.title}</a></h4>
-                                <div class="date"><i class="far fa-calendar-alt"></i> ${formatDate(p.date)}</div>
-                            </div>
-                        </div>
-                    `;
-                });
-                popularPostsDiv.innerHTML = popHtml;
-            }
-
-            // Tag cloud (all tags, maybe limit to 10)
-            const allTags = blogPosts.flatMap(p => p.tags);
-            const uniqueTags = [...new Set(allTags)].slice(0, 12);
-            const tagCloud = document.getElementById('tagCloud');
-            if (tagCloud) {
-                let tagHtml = '';
-                uniqueTags.forEach(tag => {
-                    tagHtml += `<a href="#" class="tag">${tag}</a>`;
-                });
-                tagCloud.innerHTML = tagHtml;
-            }
-
-            // AOS init
-            if (window.AOS) AOS.init({ duration: 200, once: true });
-
-            // YouTube popup (from wahara.js handles it)
-        })();
-    </script>
 </body>
 </html>
