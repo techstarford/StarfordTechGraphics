@@ -449,6 +449,13 @@ header {
   border-bottom: 1px solid var(--light-gray);
 }
 
+.mobile-nav-links > li .mobile-dropdown-toggle {
+  display: block;
+  padding: 15px 0;
+  font-weight: 600;
+  border-bottom: 1px solid var(--light-gray);
+}
+
 .mobile-dropdown {
   padding-left: 15px;
   max-height: 0;
